@@ -28,6 +28,10 @@ public class Player : MonoBehaviour
     [Header("Prefabs")]
     public GameObject bullet;
 
+    //Health and armor
+    public int health = 100;
+	private int curAmmo = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +53,12 @@ public class Player : MonoBehaviour
 
         // Player shoot at fire rate
         
-        if (Input.GetButton("Fire"))
+        if (Input.GetButton("Fire") && curAmmo > 0)
         {
             if (fireInterval <= 0f)
             {
+                curAmmo--;
+				print("Bullets Remaining: " + curAmmo);
                 Instantiate(bullet, firePoint1.position + firePoint1.forward * 2.75f, firePoint1.rotation);
                 Instantiate(bullet, firePoint2.position + firePoint2.forward * 2.75f, firePoint2.rotation);
                 fireInterval = fireRate;
@@ -135,4 +141,10 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(aimPos, 1f);
     }
+
+    public void ApplyAmmoPickup(int ammo)
+	{
+		curAmmo += ammo;
+		print("Adding " + ammo + " ammo to the player");
+	}
 }
