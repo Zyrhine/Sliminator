@@ -12,23 +12,34 @@ public class Player : MonoBehaviour
     private Transform firePoint1;
     private Transform firePoint2;
 
-    public Vector3 aimPos;
+    [HideInInspector] public Vector3 aimPos;
+    private Plane aimPlane;
     private Quaternion goalRot;
     private Quaternion firePoint1GoalRot;
     private Quaternion firePoint2GoalRot;
-    private Plane aimPlane;
     private float fireInterval = 0f;
+
+    [Header("Player Stats")]
+    public float MaxHealth = 100f;
+    public float Health = 100f;
+    public float MaxShield = 0f;
+    public float Shield = 0f;
+
+    [Header("Abilities")]
+    public bool HasDash = false;
+    public bool HasShield = false;
+    public bool HasMortarMine = false;
+    public bool HasResistance = false;
 
     [Header("Settings")]
     public float MoveSpeed = 5f;
     public float RotationSpeed = 5f;
-    public float headRotSpeed = 12f;
-    public float fireRate = 0.1f;
+    public float HeadRotSpeed = 12f;
+    public float FireRate = 0.1f;
 
     [Header("Prefabs")]
     public GameObject bullet;
 
-    // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
@@ -41,7 +52,6 @@ public class Player : MonoBehaviour
         aimPlane = new Plane(Vector3.up, new Vector3(0, 0.25f, 0));
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Player movement
@@ -53,9 +63,9 @@ public class Player : MonoBehaviour
         {
             if (fireInterval <= 0f)
             {
-                Instantiate(bullet, firePoint1.position + firePoint1.forward * 2.75f, firePoint1.rotation);
-                Instantiate(bullet, firePoint2.position + firePoint2.forward * 2.75f, firePoint2.rotation);
-                fireInterval = fireRate;
+                Instantiate(bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
+                Instantiate(bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
+                fireInterval = FireRate;
             } else
             {
                 fireInterval -= Time.deltaTime;
@@ -116,9 +126,20 @@ public class Player : MonoBehaviour
             aimPos = RayCast.GetPoint(HitDist);
 
             // Calculate aim rotations for the head and gun arms
-            goalRot = Quaternion.Slerp(turretTransform.rotation, Quaternion.LookRotation(aimPos - rb.position), headRotSpeed * Time.deltaTime);
+            goalRot = Quaternion.Slerp(turretTransform.rotation, Quaternion.LookRotation(aimPos - rb.position), HeadRotSpeed * Time.deltaTime);
             firePoint1GoalRot = Quaternion.LookRotation(aimPos - firePoint1.position);
             firePoint2GoalRot = Quaternion.LookRotation(aimPos - firePoint2.position);
+        }
+    }
+
+    // Take damage from a hit
+    void AddDamage(float damage)
+    {
+        Health -= damage;
+        if (Health <= 0f)
+        {
+            // Die instantly
+            Destroy(gameObject);
         }
     }
 
