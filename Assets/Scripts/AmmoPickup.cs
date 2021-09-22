@@ -8,7 +8,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.SendMessage("ApplyAmmoPickup", ammoAmount);
+            other.gameObject.SendMessage("AddAmmo", ammoAmount);
             Destroy(gameObject);
         }
     }

@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private Quaternion firePoint1GoalRot;
     private Quaternion firePoint2GoalRot;
     private float fireInterval = 0f;
+    private float shieldRechargeCounter = 0f;
 
     [Header("Player Stats")]
     public float MaxHealth = 100f;
@@ -37,9 +38,12 @@ public class Player : MonoBehaviour
     public float RotationSpeed = 5f;
     public float HeadRotSpeed = 12f;
     public float FireRate = 0.1f;
+    public float ShieldRechargeRate = 0.1f;
+    public float ShieldRechargeDelay = 5f;
 
     [Header("Prefabs")]
     public GameObject bullet;
+    public GameHUD HUD;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +56,8 @@ public class Player : MonoBehaviour
         firePoint2 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head/Arm.R/Gun.R");
 
         aimPlane = new Plane(Vector3.up, new Vector3(0, 0.25f, 0));
+
+        RefreshHUD();
     }
 
     void Update()
@@ -60,18 +66,47 @@ public class Player : MonoBehaviour
         UpdateMovement();
 
         // Player shoot at fire rate
-        
         if (Input.GetButton("Fire") && Ammo > 0)
         {
             if (fireInterval <= 0f)
             {
                 Ammo--;
+                HUD.UpdateAmmo(Ammo);
                 Instantiate(bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
                 Instantiate(bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
                 fireInterval = FireRate;
             } else
             {
                 fireInterval -= Time.deltaTime;
+            }
+        }
+
+        if (HasShield)
+        {
+            RegenerateShield();
+        }
+    }
+
+    // Regenerate shield after delay
+    void RegenerateShield()
+    {
+        if (shieldRechargeCounter > 0)
+        {
+            shieldRechargeCounter -= Time.deltaTime;
+        }
+        else
+        {
+            if (Shield < MaxShield)
+            {
+                Shield += ShieldRechargeRate;
+
+                // Cap shield regeneration for potentially larger intervals
+                if (Shield > MaxShield)
+                {
+                    Shield = MaxShield;
+                }
+
+                HUD.UpdateShield(Shield);
             }
         }
     }
@@ -137,12 +172,42 @@ public class Player : MonoBehaviour
     // Take damage from a hit
     void AddDamage(float damage)
     {
-        Health -= damage;
+        if (HasShield)
+        {
+            if (Shield >= damage)
+            {
+                Shield -= damage;
+            }
+            else
+            {
+                damage -= Shield;
+                Shield = 0;
+                Health -= damage;
+            }
+
+            shieldRechargeCounter = ShieldRechargeDelay;
+
+            HUD.UpdateShield(Shield);
+            HUD.UpdateHealth(Health);
+        } else
+        {
+            Health -= damage;
+            HUD.UpdateHealth(Health);
+        }
+
         if (Health <= 0f)
         {
             // Die instantly
             Destroy(gameObject);
         }
+    }
+
+    void RefreshHUD()
+    {
+        HUD.DisplayShield(HasShield);
+        HUD.UpdateAmmo(Ammo);
+        HUD.UpdateShield(Shield);
+        HUD.UpdateHealth(Health);
     }
 
     // Regain health
@@ -155,6 +220,8 @@ public class Player : MonoBehaviour
         {
             Health = MaxHealth;
         }
+
+        HUD.UpdateHealth(Health);
     }
 
     void LateUpdate()
@@ -171,8 +238,9 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(aimPos, 1f);
     }
 
-    public void ApplyAmmoPickup(int ammo)
+    public void AddAmmo(int ammo)
 	{
 		Ammo += ammo;
+        HUD.UpdateAmmo(Ammo);
 	}
 }
