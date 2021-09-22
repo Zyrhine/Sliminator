@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public float Health = 100f;
     public float MaxShield = 0f;
     public float Shield = 0f;
+    public int Ammo = 100;
 
     [Header("Abilities")]
     public bool HasDash = false;
@@ -39,8 +40,6 @@ public class Player : MonoBehaviour
 
     [Header("Prefabs")]
     public GameObject bullet;
-
-	private int curAmmo = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -62,11 +61,11 @@ public class Player : MonoBehaviour
 
         // Player shoot at fire rate
         
-        if (Input.GetButton("Fire") && curAmmo > 0)
+        if (Input.GetButton("Fire") && Ammo > 0)
         {
             if (fireInterval <= 0f)
             {
-                curAmmo--;
+                Ammo--;
                 Instantiate(bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
                 Instantiate(bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
                 fireInterval = FireRate;
@@ -75,7 +74,6 @@ public class Player : MonoBehaviour
                 fireInterval -= Time.deltaTime;
             }
         }
-        
     }
 
     void UpdateMovement()
@@ -147,6 +145,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Regain health
+    void AddHealth(float health)
+    {
+        Health += health;
+
+        // Cap health
+        if (Health > MaxHealth)
+        {
+            Health = MaxHealth;
+        }
+    }
+
     void LateUpdate()
     {
         // Apply rotations ontop of animation
@@ -163,7 +173,6 @@ public class Player : MonoBehaviour
 
     public void ApplyAmmoPickup(int ammo)
 	{
-		curAmmo += ammo;
-		print("Adding " + ammo + " ammo to the player");
+		Ammo += ammo;
 	}
 }
