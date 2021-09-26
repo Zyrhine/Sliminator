@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossSlime : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    enum State
     {
-        
+        Search,
+        Chase
     }
 
-    // Update is called once per frame
+    private State state;
+    private Player target;
+    private NavMeshAgent agent;
+
+    [Header("Enemy Stats")]
+    public float MaxHealth = 1000f;
+    public float Health = 1000f;
+
+    void Start()
+    {
+
+    }
+
     void Update()
     {
-        
+
+    }
+
+    void AddDamage(float damage)
+    {
+        Health -= damage;
+        if (Health <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

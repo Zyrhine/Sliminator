@@ -15,9 +15,14 @@ public class VolatileSlime : MonoBehaviour
     private State state;
     private bool isExploding;
 
+    [Header("Prefabs")]
+    public GameObject Explosion;
+
     [Header("Enemy Stats")]
     public float MaxHealth = 100f;
     public float Health = 100f;
+
+    [Header("AI")]
     public float ExplosionRadius = 2f;
 
     void Start()
@@ -75,7 +80,9 @@ public class VolatileSlime : MonoBehaviour
         if (!isExploding)
         {
             agent.isStopped = true;
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 0.25f);
+            var explosion = Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+            Destroy(explosion, 2);
             isExploding = true;
         }
     }
@@ -85,8 +92,7 @@ public class VolatileSlime : MonoBehaviour
         Health -= damage;
         if (Health <= 0f)
         {
-            // Die instantly
-            Destroy(gameObject);
+            state = State.Explode;
         }
     }
 
@@ -98,7 +104,11 @@ public class VolatileSlime : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, ExplosionRadius);
         foreach (Collider collider in colliders)
         {
-            collider.SendMessage("AddDamage", 25f);
+            if (collider.CompareTag("Player") || collider.CompareTag("Enemy"))
+            {
+                collider.SendMessage("AddDamage", 25f);
+            }
+            
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -15,12 +13,6 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * 2500);
-    }
-
-    void Update()
-    {
-        // Move forward
-        //transform.Translate(Vector3.forward);
     }
 
     void OnCollisionEnter(Collision collision)

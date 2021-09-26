@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Minion
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Bullet
+  - Navigation
   - Water
   - UI
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 

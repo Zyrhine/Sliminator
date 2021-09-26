@@ -21,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, TriggerRadius);
     }
 }
