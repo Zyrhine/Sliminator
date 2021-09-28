@@ -14,6 +14,10 @@ public class VolatileSlime : MonoBehaviour
     private NavMeshAgent agent;
     private State state;
     private bool isExploding;
+<<<<<<< Updated upstream
+=======
+    private AudioSource audio;
+>>>>>>> Stashed changes
 
     [Header("Prefabs")]
     public GameObject Explosion;
@@ -28,6 +32,10 @@ public class VolatileSlime : MonoBehaviour
     void Start()
     {
         state = State.Search;
+<<<<<<< Updated upstream
+=======
+        audio = GetComponent<AudioSource>();
+>>>>>>> Stashed changes
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -82,8 +90,15 @@ public class VolatileSlime : MonoBehaviour
             agent.isStopped = true;
             Destroy(gameObject, 0.25f);
             var explosion = Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+<<<<<<< Updated upstream
             Destroy(explosion, 2);
             isExploding = true;
+=======
+            audio.PlayOneShot(audio.clip);
+            Destroy(explosion, 2);
+            isExploding = true;
+            
+>>>>>>> Stashed changes
         }
     }
 
