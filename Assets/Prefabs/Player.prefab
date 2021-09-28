@@ -223,10 +223,7 @@ GameObject:
   - component: {fileID: 3152216411306483433}
   - component: {fileID: 3748761614445867122}
   - component: {fileID: 5932484376553700024}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 5930006717132640737}
->>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -310,8 +307,6 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!82 &5930006717132640737
 AudioSource:
   m_ObjectHideFlags: 0
@@ -408,7 +403,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> Stashed changes
 --- !u!1001 &1028970966988204016
 PrefabInstance:
   m_ObjectHideFlags: 0

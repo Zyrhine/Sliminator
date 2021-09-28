@@ -73,10 +73,7 @@ public class Player : MonoBehaviour
             if (fireInterval <= 0f)
             {
                 Ammo--;
-<<<<<<< Updated upstream
-=======
                 audio.PlayOneShot(audio.clip);
->>>>>>> Stashed changes
                 HUD.UpdateAmmo(Ammo);
                 Instantiate(bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
                 Instantiate(bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);

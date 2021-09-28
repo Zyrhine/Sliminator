@@ -15,10 +15,7 @@ GameObject:
   - component: {fileID: 7925503866276465771}
   - component: {fileID: 514886888177138747}
   - component: {fileID: 5812063703996197099}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 2507983963327694694}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: VolatileSlime
   m_TagString: Enemy
@@ -156,8 +153,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
-<<<<<<< Updated upstream
-=======
 --- !u!82 &2507983963327694694
 AudioSource:
   m_ObjectHideFlags: 0
@@ -254,4 +249,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> Stashed changes

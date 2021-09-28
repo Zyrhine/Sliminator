@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream:Assets/Prefabs/Enemy/MassSlime.prefab.meta
 guid: cb3a6847520745640a695a141e0d9e48
-=======
-guid: ace9dda3ed9af3e43a7115235586790e
->>>>>>> Stashed changes:Assets/Prefabs/Enemy/BossSlime.prefab.meta
-=======
-guid: cb3a6847520745640a695a141e0d9e48
->>>>>>> Stashed changes
 PrefabImporter:
   externalObjects: {}
   userData: 
