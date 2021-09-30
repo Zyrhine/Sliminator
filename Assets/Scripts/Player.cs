@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public float MaxShield = 0f;
     public float Shield = 0f;
     public int Ammo = 100;
+    public int MortarCharges = 5;
 
     [Header("Abilities")]
     public bool HasDash = false;
@@ -43,7 +44,8 @@ public class Player : MonoBehaviour
     public float ShieldRechargeDelay = 5f;
 
     [Header("Prefabs")]
-    public GameObject bullet;
+    public GameObject Bullet;
+    public GameObject MortarMine;
     public GameHUD HUD;
 
     // Start is called before the first frame update
@@ -65,28 +67,67 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Player movement
-        UpdateMovement();
+
+        if (dashing)
+        {
+            UpdateDash();
+        }
+        else
+        {
+            UpdateMovement();
+        }
+        
 
         // Player shoot at fire rate
         if (Input.GetButton("Fire") && Ammo > 0)
         {
-            if (fireInterval <= 0f)
-            {
-                Ammo--;
-                audio.PlayOneShot(audio.clip);
-                HUD.UpdateAmmo(Ammo);
-                Instantiate(bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
-                Instantiate(bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
-                fireInterval = FireRate;
-            } else
-            {
-                fireInterval -= Time.deltaTime;
-            }
+            PrimaryFire();
         }
 
+        // Player shoot at fire rate
+        if (Input.GetButton("Fire2") && MortarCharges > 0)
+        {
+            SecondaryFire();
+        }
+
+        // Shield Ability
         if (HasShield)
         {
             RegenerateShield();
+        }
+    }
+
+    void PrimaryFire()
+    {
+        if (fireInterval <= 0f)
+        {
+            Ammo--;
+            audio.PlayOneShot(audio.clip);
+            HUD.UpdateAmmo(Ammo);
+            Instantiate(Bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
+            Instantiate(Bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
+            fireInterval = FireRate;
+        }
+        else
+        {
+            fireInterval -= Time.deltaTime;
+        }
+    }
+
+    void SecondaryFire()
+    {
+        if (fireInterval <= 0f)
+        {
+            Ammo--;
+            audio.PlayOneShot(audio.clip);
+            HUD.UpdateAmmo(Ammo);
+            Instantiate(Bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
+            Instantiate(Bullet, firePoint2.position + firePoint2.forward * 2f, firePoint2.rotation);
+            fireInterval = FireRate;
+        }
+        else
+        {
+            fireInterval -= Time.deltaTime;
         }
     }
 
@@ -114,6 +155,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    void UpdateDash()
+    {
+        // Apply dash movement
+        rb.MovePosition(rb.position + dashDirection * dashSpeed * Time.deltaTime);
+
+        // Rotate body toward direction
+        Quaternion goalBodyRotation = Quaternion.LookRotation(dashDirection, Vector3.up);
+        var rotation = Quaternion.Slerp(rb.rotation, goalBodyRotation, Time.deltaTime * RotationSpeed);
+        rb.MoveRotation(rotation);
+
+        dashInterval -= Time.deltaTime;
+
+        if (dashInterval <= 0)
+        {
+            dashing = false;
+            anim.SetBool("Dash", false);
+        }
+    }
+
     void UpdateMovement()
     {
         // Get movement input
@@ -129,7 +189,7 @@ public class Player : MonoBehaviour
         right.Normalize();
 
         // Form the direction to move in
-        var direction = forward * verticalAxis + right * horizontalAxis;
+        Vector3 direction = forward * verticalAxis + right * horizontalAxis;
 
         if (direction != Vector3.zero)
         {
@@ -149,7 +209,25 @@ public class Player : MonoBehaviour
             // Stop walk animation
             anim.SetFloat("Speed", 0);
         }
+
+        // Activate Dash Ability
+        if (HasDash)
+        {
+            if (Input.GetButtonDown("Dash"))
+            {
+                dashDirection = direction;
+                dashing = true;
+                anim.SetBool("Dash", true);
+                dashInterval = dashLength;
+            }
+        }
     }
+
+    Vector3 dashDirection;
+    bool dashing = false;
+    float dashLength = 0.25f;
+    float dashSpeed = 30f;
+    float dashInterval = 0f;
 
     private void FixedUpdate()
     {

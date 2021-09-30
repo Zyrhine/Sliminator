@@ -866,7 +866,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3152216411306483433, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: HasDash
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152216411306483433, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
       propertyPath: HasShield
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152216411306483433, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: HasMortarMine
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152216411306483433, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: HasResistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3846658001119699867, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
@@ -1023,6 +1035,10 @@ PrefabInstance:
     - target: {fileID: 6954040280899482849, guid: 5d7018d80c89e0a468d2ebd4374736ac, type: 3}
       propertyPath: m_Name
       value: BackgroundAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954040280899482862, guid: 5d7018d80c89e0a468d2ebd4374736ac, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6954040280899482863, guid: 5d7018d80c89e0a468d2ebd4374736ac, type: 3}
       propertyPath: m_RootOrder
