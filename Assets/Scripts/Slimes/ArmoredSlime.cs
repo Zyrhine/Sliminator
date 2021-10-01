@@ -15,6 +15,10 @@ public class ArmoredSlime : MonoBehaviour
     private Player target;
     private NavMeshAgent agent;
 
+    //Audio
+    public AudioSource aArmour;
+    public AudioSource aDeath;
+
     [Header("Parts")]
     public GameObject PlateArmor;
 
@@ -73,11 +77,13 @@ public class ArmoredSlime : MonoBehaviour
         // Remove visual armor if armor is lost
         if (PlateArmor && Armor == 0)
         {
+            aArmour.Play();
             Destroy(PlateArmor);
         }
 
         if (Health <= 0f)
         {
+            aDeath.Play();
             Destroy(gameObject);
         }
     }
