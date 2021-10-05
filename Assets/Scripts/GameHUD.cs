@@ -31,6 +31,11 @@ public class GameHUD : MonoBehaviour
         Ammo.text = ammo.ToString();
     }
 
+    public void UpdateMortarCharges(int charges)
+    {
+        // Mortar charges
+    }
+
     public void UpdateHealth(float health)
     {
         HealthSlider.value = health;
