@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class MassSlime : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MassSlime : MonoBehaviour
     private Player target;
     private NavMeshAgent agent;
     private Rigidbody rb;
+    private AudioSource aDeathMass;
 
     [Header("Enemy Stats")]
     public float MaxHealth = 100f;
@@ -27,6 +29,7 @@ public class MassSlime : MonoBehaviour
 
     void Start()
     {
+        aDeathMass = GetComponent<AudioSource>();
         state = State.Search;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         agent = GetComponent<NavMeshAgent>();
@@ -89,9 +92,16 @@ public class MassSlime : MonoBehaviour
         Health -= damage;
         if (Health <= 0f)
         {
-            Destroy(gameObject);
+            aDeathMass.Play();
+            StartCoroutine(Denied());
+            
         }
     }
+
+   IEnumerator Denied() {
+        yield return new WaitForSeconds(1f); 
+        Destroy(gameObject);
+   }
 
     void ChargeAttack()
     {

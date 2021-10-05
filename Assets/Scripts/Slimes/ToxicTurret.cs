@@ -7,6 +7,8 @@ public class ToxicTurret : MonoBehaviour
 {
     private Player target;
     private NavMeshAgent agent;
+    public AudioSource aShoot;
+    public AudioSource aDeath;
 
     [Header("Prefabs")]
     public GameObject ToxicBlob;
@@ -47,6 +49,7 @@ public class ToxicTurret : MonoBehaviour
 
     void Shoot()
     {
+        aShoot.Play();
         var rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         Instantiate(ToxicBlob, transform.position, rotation);
     }
@@ -56,6 +59,7 @@ public class ToxicTurret : MonoBehaviour
         Health -= damage;
         if (Health <= 0f)
         {
+            aDeath.Play();
             Destroy(gameObject);
         }
     }

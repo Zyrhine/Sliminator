@@ -16,6 +16,8 @@ public class MinionSlime : MonoBehaviour
     private NavMeshAgent agent;
     private State state;
     private bool alarmed = true;
+    public AudioSource aDeathMini;
+    public AudioSource aCombine;
 
     [HideInInspector] public bool hasGroup = false;
     private bool isLeader = false;
@@ -100,7 +102,7 @@ public class MinionSlime : MonoBehaviour
                     }
                 }
             }
-
+            
             state = State.Merge;
         }
     }
@@ -187,6 +189,7 @@ public class MinionSlime : MonoBehaviour
     {
         // Spawn the mass
         Debug.Log("Spawning");
+        aCombine.Play();
         Instantiate(MassSlime, position, Quaternion.identity);
 
         // Destroy the minions
@@ -201,6 +204,7 @@ public class MinionSlime : MonoBehaviour
         Health -= damage;
         if (Health <= 0f)
         {
+            aDeathMini.Play();
             Destroy(gameObject);
         }
     }

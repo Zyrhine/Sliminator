@@ -265,7 +265,6 @@ MonoBehaviour:
   MaxShield: 100
   Shield: 0
   Ammo: 100
-  MortarCharges: 5
   HasDash: 0
   HasShield: 0
   HasMortarMine: 0
@@ -276,8 +275,7 @@ MonoBehaviour:
   FireRate: 0.1
   ShieldRechargeRate: 0.1
   ShieldRechargeDelay: 5
-  Bullet: {fileID: 8690018707753453145, guid: fc5f3087010a8c7488230f864b310015, type: 3}
-  MortarMine: {fileID: 2115530896675567973, guid: 1494052695fd15c4e91f0e71c638d47a, type: 3}
+  bullet: {fileID: 8690018707753453145, guid: fc5f3087010a8c7488230f864b310015, type: 3}
   HUD: {fileID: 8243615452767220337}
 --- !u!54 &3748761614445867122
 Rigidbody:

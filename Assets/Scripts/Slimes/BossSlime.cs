@@ -15,6 +15,8 @@ public class BossSlime : MonoBehaviour
     private Player target;
     private NavMeshAgent agent;
 
+    public AudioSource aDeath;
+
     [Header("Enemy Stats")]
     public float MaxHealth = 1000f;
     public float Health = 1000f;
@@ -34,6 +36,7 @@ public class BossSlime : MonoBehaviour
         Health -= damage;
         if (Health <= 0f)
         {
+            aDeath.Play();
             Destroy(gameObject);
         }
     }
