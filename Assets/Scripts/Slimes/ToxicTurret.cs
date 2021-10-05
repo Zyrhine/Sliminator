@@ -1,21 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class ToxicTurret : MonoBehaviour
+public sealed class ToxicTurret : Slime
 {
-    private Player target;
-    private NavMeshAgent agent;
-    public AudioSource aShoot;
-    public AudioSource aDeath;
-
-    [Header("Prefabs")]
-    public GameObject ToxicBlob;
-
     [Header("Enemy Stats")]
-    public float MaxHealth = 100f;
-    public float Health = 100f;
     public float FireRate = 3f;
     private float fireInterval = 0f;
 
@@ -23,16 +11,16 @@ public class ToxicTurret : MonoBehaviour
     public float AttackRange = 30f;
     public List<GameObject> WarpPoints = new List<GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        agent = GetComponent<NavMeshAgent>();
-    }
+    [Header("Sounds")]
+    public AudioClip ClipShoot;
 
-    // Update is called once per frame
+    [Header("Prefabs")]
+    public GameObject ToxicBlob;
+
     void Update()
     {
+        if (!Alive) return;
+
         if (fireInterval <= 0f)
         {
             if (Vector3.Distance(transform.position, target.transform.position) <= AttackRange)
@@ -49,18 +37,8 @@ public class ToxicTurret : MonoBehaviour
 
     void Shoot()
     {
-        aShoot.Play();
         var rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         Instantiate(ToxicBlob, transform.position, rotation);
-    }
-
-    void AddDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0f)
-        {
-            aDeath.Play();
-            Destroy(gameObject);
-        }
+        sound.PlayOneShot(ClipShoot);
     }
 }

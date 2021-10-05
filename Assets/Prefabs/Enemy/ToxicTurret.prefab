@@ -49,14 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7724bbedb8b795e488ddfdd7983857e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aShoot: {fileID: 0}
-  aDeath: {fileID: 0}
-  ToxicBlob: {fileID: 3733407473543058645, guid: b25c487cbf8e28c4a97354363fc20ac1, type: 3}
   MaxHealth: 100
   Health: 100
+  MoveSpeed: 0
+  ClipDeath: {fileID: 8300000, guid: 3ec33c0d979641b418eeabfd6ff449b6, type: 3}
   FireRate: 2
   AttackRange: 30
   WarpPoints: []
+  ClipShoot: {fileID: 8300000, guid: ed8ca27ab685f094d950626a2480bc76, type: 3}
+  ToxicBlob: {fileID: 3733407473543058645, guid: b25c487cbf8e28c4a97354363fc20ac1, type: 3}
 --- !u!65 &8809642738791878370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118,7 +119,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eab1c36fda4dbc54f9b9ce81474629de, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

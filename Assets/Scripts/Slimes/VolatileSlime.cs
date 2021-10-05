@@ -1,51 +1,24 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-public class VolatileSlime : MonoBehaviour
+public sealed class VolatileSlime : Slime
 {
-    enum State
-    {
-        Search,
-        Chase,
-        Explode
-    }
-
-    private Player target;
-    private NavMeshAgent agent;
-    private State state;
-    private bool isExploding;
-    private AudioSource sound;
-
     [Header("Prefabs")]
-    public GameObject Explosion;
-
-    [Header("Enemy Stats")]
-    public float MaxHealth = 100f;
-    public float Health = 100f;
+    public GameObject ExplosionFX;
 
     [Header("AI")]
     public float ExplosionRadius = 2f;
 
-    void Start()
-    {
-        state = State.Search;
-        sound = GetComponent<AudioSource>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        agent = GetComponent<NavMeshAgent>();
-    }
-
     void Update()
     {
-        switch(state)
+        if (!Alive) return;
+
+        switch (state)
         {
-            case State.Search:
+            case SlimeState.Search:
                 UpdateSearch();
                 break;
-            case State.Chase:
+            case SlimeState.Chase:
                 UpdateChase();
-                break;
-            case State.Explode:
-                UpdateExplode();
                 break;
         }
     }
@@ -56,7 +29,7 @@ public class VolatileSlime : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) < 5f)
         {
-            state = State.Chase;
+            state = SlimeState.Chase;
         }
     }
 
@@ -68,49 +41,32 @@ public class VolatileSlime : MonoBehaviour
 
         if (targetDistance < 1f)
         {
-            state = State.Explode;
+            // Explode
+            Die(0.25f);
         }
 
         if (targetDistance > 5f)
         {
-            state = State.Search;
+            state = SlimeState.Search;
         }
     }
 
-    void UpdateExplode()
+    protected override void Die(float delay = 1f)
     {
-        if (!isExploding)
+        if (Alive)
         {
-            agent.isStopped = true;
-            Destroy(gameObject, 0.25f);
-            var explosion = Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-            sound.PlayOneShot(sound.clip);
+            base.Die(0.25f);
+            var explosion = Instantiate(ExplosionFX, gameObject.transform.position, Quaternion.identity);
             Destroy(explosion, 2);
-            isExploding = true;
-            
-        }
-    }
 
-    void AddDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0f)
-        {
-            state = State.Explode;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        // Trigger death explosion
-
-        // Deal damage in radius
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, ExplosionRadius);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.CompareTag("Player") || collider.CompareTag("Enemy"))
+            // Deal damage in radius
+            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, ExplosionRadius);
+            foreach (Collider collider in colliders)
             {
-                collider.SendMessage("AddDamage", 25f);
+                if (collider.CompareTag("Player") || collider.CompareTag("Enemy"))
+                {
+                    collider.SendMessage("AddDamage", 25f);
+                }
             }
         }
     }

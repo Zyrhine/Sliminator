@@ -1,25 +1,7 @@
 using UnityEngine;
-using UnityEngine.AI;
-using System.Collections;
 
-public class MassSlime : MonoBehaviour
+public sealed class MassSlime : Slime
 {
-    enum State
-    {
-        Search,
-        Chase
-    }
-
-    private State state;
-    private Player target;
-    private NavMeshAgent agent;
-    private Rigidbody rb;
-    private AudioSource aDeathMass;
-
-    [Header("Enemy Stats")]
-    public float MaxHealth = 100f;
-    public float Health = 100f;
-
     [Header("AI")]
     public float ChargeForce = 500f;
     public float ChaseRange = 20f;
@@ -27,17 +9,10 @@ public class MassSlime : MonoBehaviour
     public float ChargeCooldown = 10f;
     private float chargeInterval = 0f;
 
-    void Start()
-    {
-        aDeathMass = GetComponent<AudioSource>();
-        state = State.Search;
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
-    }
-
     void Update()
     {
+        if (!Alive) return;
+
         if (chargeInterval > 0)
         {
             chargeInterval -= Time.deltaTime;
@@ -50,10 +25,10 @@ public class MassSlime : MonoBehaviour
 
         switch (state)
         {
-            case State.Search:
+            case SlimeState.Search:
                 UpdateSearch();
                 break;
-            case State.Chase:
+            case SlimeState.Chase:
                 UpdateChase();
                 break;
         }
@@ -65,7 +40,7 @@ public class MassSlime : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) <= ChaseRange)
         {
-            state = State.Chase;
+            state = SlimeState.Chase;
         }
     }
 
@@ -83,25 +58,9 @@ public class MassSlime : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) > ChaseRange)
         {
-            state = State.Search;
+            state = SlimeState.Search;
         }
     }
-
-    void AddDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0f)
-        {
-            aDeathMass.Play();
-            StartCoroutine(Denied());
-            
-        }
-    }
-
-   IEnumerator Denied() {
-        yield return new WaitForSeconds(1f); 
-        Destroy(gameObject);
-   }
 
     void ChargeAttack()
     {

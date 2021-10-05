@@ -1,47 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class MinionSlime : MonoBehaviour
+public sealed class MinionSlime : Slime
 {
-    enum State
-    {
-        Search,
-        Chase,
-        Merge
-    }
-
-    private Player target;
-    private NavMeshAgent agent;
-    private State state;
-    private bool alarmed = true;
-    public AudioSource aDeathMini;
-    public AudioSource aCombine;
-
     [HideInInspector] public bool hasGroup = false;
+    private bool alarmed = true;
     private bool isLeader = false;
-
-    [Header("Prefabs")]
-    public GameObject MassSlime;
-
-    [Header("Enemy Stats")]
-    public float MaxHealth = 100f;
-    public float Health = 100f;
 
     [Header("AI")]
     public float AllySearchRadius = 10f;
     public float MergeRadius = 3f;
 
-    void Start()
-    {
-        state = State.Search;
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        agent = GetComponent<NavMeshAgent>();
-    }
+    [Header("Sounds")]
+    public AudioClip ClipCombine;
+
+    [Header("Prefabs")]
+    public GameObject MassSlime;
 
     void Update()
     {
+        if (!Alive) return;
+
         if (alarmed && !hasGroup)
         {
             CheckForMerge();
@@ -49,18 +28,18 @@ public class MinionSlime : MonoBehaviour
 
         if (hasGroup)
         {
-            state = State.Merge;
+            state = SlimeState.Merge;
         }
 
         switch (state)
         {
-            case State.Search:
+            case SlimeState.Search:
                 UpdateSearch();
                 break;
-            case State.Chase:
+            case SlimeState.Chase:
                 UpdateChase();
                 break;
-            case State.Merge:
+            case SlimeState.Merge:
                 UpdateMerge();
                 break;
         }
@@ -103,7 +82,7 @@ public class MinionSlime : MonoBehaviour
                 }
             }
             
-            state = State.Merge;
+            state = SlimeState.Merge;
         }
     }
 
@@ -113,7 +92,7 @@ public class MinionSlime : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) < 5f)
         {
-            state = State.Chase;
+            state = SlimeState.Chase;
         }
     }
 
@@ -130,7 +109,7 @@ public class MinionSlime : MonoBehaviour
 
         if (targetDistance > 5f)
         {
-            state = State.Search;
+            state = SlimeState.Search;
         }
     }
 
@@ -155,7 +134,7 @@ public class MinionSlime : MonoBehaviour
         {
             hasGroup = false;
             isLeader = false;
-            state = State.Search;
+            state = SlimeState.Search;
             return;
         }
 
@@ -189,7 +168,7 @@ public class MinionSlime : MonoBehaviour
     {
         // Spawn the mass
         Debug.Log("Spawning");
-        aCombine.Play();
+        sound.PlayOneShot(ClipCombine);
         Instantiate(MassSlime, position, Quaternion.identity);
 
         // Destroy the minions
@@ -197,21 +176,6 @@ public class MinionSlime : MonoBehaviour
         {
             Destroy(minion);
         }
-    }
-
-    void AddDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0f)
-        {
-            aDeathMini.Play();
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnDestroy()
-    {
-
     }
 
     private void OnDrawGizmos()

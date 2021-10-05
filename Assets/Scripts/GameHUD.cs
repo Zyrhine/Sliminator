@@ -7,10 +7,16 @@ public class GameHUD : MonoBehaviour
     public float ShieldMax = 100f;
     public float HealthMax = 100f;
 
+    private bool IsWaveMode = false;
+    private TMP_Text waveText;
+    private TMP_Text enemiesText;
+
     [Header("Components")]
     public Slider HealthSlider;
     public Slider ShieldSlider;
+    public GameObject ShieldIcon;
     public TMP_Text Ammo;
+    public TMP_Text MortarAmmo;
 
     [Header("Cursor")]
     public Texture2D cursorTexture;
@@ -21,6 +27,8 @@ public class GameHUD : MonoBehaviour
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
         HealthSlider.maxValue = HealthMax;
         ShieldSlider.maxValue = ShieldMax;
+        waveText = transform.Find("WaveText").GetComponent<TMP_Text>();
+        enemiesText = transform.Find("EnemiesText").GetComponent<TMP_Text>();
     }
 
     void Update()
@@ -30,7 +38,8 @@ public class GameHUD : MonoBehaviour
 
     public void DisplayShield(bool state)
     {
-        ShieldSlider.enabled = state;
+        ShieldIcon.SetActive(state);
+        ShieldSlider.gameObject.SetActive(state);
     }
 
     public void UpdateAmmo(int ammo)
@@ -40,7 +49,7 @@ public class GameHUD : MonoBehaviour
 
     public void UpdateMortarCharges(int charges)
     {
-        // Mortar charges
+        MortarAmmo.text = charges.ToString();
     }
 
     public void UpdateHealth(float health)
@@ -51,5 +60,11 @@ public class GameHUD : MonoBehaviour
     public void UpdateShield(float shield)
     {
         ShieldSlider.value = shield;
+    }
+
+    public void UpdateWave(int wave, int enemiesRemaining)
+    {
+        waveText.text = "Wave " + wave.ToString();
+        enemiesText.text = "Enemies Remaining: " + enemiesRemaining.ToString();
     }
 }

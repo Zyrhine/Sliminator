@@ -49,9 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2293825d895e7e94281d1719cb2218e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 100016, guid: c9afa2a2ad89ebc41897c1247ceddadd, type: 3}
   MaxHealth: 100
   Health: 100
+  MoveSpeed: 10
+  ClipDeath: {fileID: 8300000, guid: 8c276b1031470c745bcf61dad244af1c, type: 3}
+  ExplosionFX: {fileID: 100016, guid: c9afa2a2ad89ebc41897c1247ceddadd, type: 3}
   ExplosionRadius: 2
 --- !u!33 &2432207957892108635
 MeshFilter:
@@ -127,7 +129,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -144,7 +146,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

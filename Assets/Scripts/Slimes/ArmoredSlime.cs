@@ -1,51 +1,35 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ArmoredSlime : MonoBehaviour
+public sealed class ArmoredSlime : Slime
 {
-    enum State
-    {
-        Search,
-        Chase
-    }
-
-    private State state;
-    private Player target;
-    private NavMeshAgent agent;
-
-    //Audio
-    public AudioSource aArmour;
-    public AudioSource aDeath;
-
     [Header("Parts")]
     public GameObject PlateArmor;
 
     [Header("Enemy Stats")]
     public float Armor = 100f;
-    public float MaxHealth = 200f;
-    public float Health = 200f;
+    public float AttackSpeed = 2.5f;
+    private float attackInterval = 0f;
 
     [Header("AI")]
-    public float ChaseRange = 20f;
+    public float ChaseRange = 10f;
+    public float AttackRange = 2f;
     public List<GameObject> PatrolPoints = new List<GameObject>();
 
-    void Start()
-    {
-        state = State.Search;
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        agent = GetComponent<NavMeshAgent>();
-    }
+    [Header("Sounds")]
+    public AudioClip ClipArmorLost;
 
     void Update()
     {
+        if (!Alive) return;
+
         switch (state)
         {
-            case State.Search:
+            case SlimeState.Search:
                 UpdateSearch();
                 break;
-            case State.Chase:
+            case SlimeState.Chase:
                 UpdateChase();
                 break;
         }
@@ -53,15 +37,61 @@ public class ArmoredSlime : MonoBehaviour
 
     void UpdateSearch()
     {
+        if (agent.remainingDistance < 1f)
+        {
+            agent.SetDestination(RandomPosition(20f));
+        }
 
+        if (Vector2.Distance(transform.position, target.transform.position) <= ChaseRange)
+        {
+            state = SlimeState.Chase;
+        }
+    }
+
+    Vector3 RandomPosition(float radius)
+    {
+        var randDirection = Random.insideUnitSphere * radius;
+        randDirection += agent.transform.position;
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randDirection, out navHit, radius, -1);
+        return navHit.position;
     }
 
     void UpdateChase()
     {
+        // Close enough to attack
+        if (Vector2.Distance(transform.position, target.transform.position) <= AttackRange)
+        {
+            if (attackInterval <= 0)
+            {
+                Attack();
+            } else
+            {
+                attackInterval -= Time.deltaTime;
+            }
+        } else
+        {
+            // Advance toward player
+            agent.SetDestination(target.transform.position);
+        }
 
+        // Has gone out of target range
+        if (Vector2.Distance(transform.position, target.transform.position) > ChaseRange)
+        {
+            state = SlimeState.Search;
+        }
     }
 
-    void AddDamage(float damage)
+    // Attack the player
+    void Attack()
+    {
+        target.SendMessage("AddDamage", 25);
+
+        // Reset attack cooldown
+        attackInterval = AttackSpeed;
+    }
+
+    protected override void AddDamage(float damage)
     {
         if (Armor >= damage)
         {
@@ -77,14 +107,13 @@ public class ArmoredSlime : MonoBehaviour
         // Remove visual armor if armor is lost
         if (PlateArmor && Armor == 0)
         {
-            aArmour.Play();
+            sound.PlayOneShot(ClipArmorLost);
             Destroy(PlateArmor);
         }
 
         if (Health <= 0f)
         {
-            aDeath.Play();
-            Destroy(gameObject);
+            Die();
         }
     }
 }

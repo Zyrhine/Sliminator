@@ -1,43 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-
-public class BossSlime : MonoBehaviour
+public sealed class BossSlime : Slime
 {
-    enum State
-    {
-        Search,
-        Chase
-    }
-
-    private State state;
-    private Player target;
-    private NavMeshAgent agent;
-
-    public AudioSource aDeath;
-
-    [Header("Enemy Stats")]
-    public float MaxHealth = 1000f;
-    public float Health = 1000f;
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-
-    }
-
-    void AddDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0f)
-        {
-            aDeath.Play();
-            Destroy(gameObject);
-        }
+        if (!Alive) return;
     }
 }

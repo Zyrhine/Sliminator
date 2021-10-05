@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Transform firePoint1;
     private Transform firePoint2;
     private Transform firePoint3;
+    private Transform respawnPoint;
 
     [HideInInspector] public Vector3 aimPos;
     private Plane aimPlane;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     private float shieldRechargeCounter = 0f;
 
     [Header("Player Stats")]
+    public int Lives = 3;
     public float MaxHealth = 100f;
     public float Health = 100f;
     public float MaxShield = 0f;
@@ -86,10 +88,12 @@ public class Player : MonoBehaviour
             PrimaryFire();
         }
 
-        // Player shoot at fire rate
-        if (Input.GetButtonDown("Fire2"))
+        if (HasMortarMine)
         {
-            SecondaryFire();
+            if (Input.GetButtonDown("Fire2"))
+            {
+                SecondaryFire();
+            }
         }
 
         // Shield Ability
@@ -278,14 +282,42 @@ public class Player : MonoBehaviour
         if (Health <= 0f)
         {
             // Die instantly
-            Destroy(gameObject);
+            
         }
+    }
+
+    void Die()
+    {
+        // Play explosion animation
+
+        if (Lives > 1)
+        {
+            Lives--;
+            Respawn();
+        } else
+        {
+            Destroy(gameObject);
+
+            // Trigger game over
+        }
+    }
+
+    void Respawn()
+    {
+        transform.position = respawnPoint.position;
+        Health = MaxHealth;
+    }
+
+    void SetRespawnPoint(Transform position)
+    {
+        respawnPoint = position;
     }
 
     void RefreshHUD()
     {
         HUD.DisplayShield(HasShield);
         HUD.UpdateAmmo(Ammo);
+        HUD.UpdateMortarCharges(MortarCharges);
         HUD.UpdateShield(Shield);
         HUD.UpdateHealth(Health);
     }

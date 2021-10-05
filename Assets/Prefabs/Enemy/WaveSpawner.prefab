@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7339216829742549309}
   - component: {fileID: 31620986033035354}
+  - component: {fileID: 5434939504806726449}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -43,3 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac48b4cb0e5f183449f0e3f60ffc5cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggerRadius: 20
+  SpawnPoints: []
+  waves: []
+  VolatileSlime: {fileID: 8708806970924145656, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+  ArmoredSlime: {fileID: 1390016285496000849, guid: 76cbcb3da0d156141a1680af54b4d273, type: 3}
+  ToxicTurret: {fileID: 3691757549395426698, guid: 1c8e9955eb615ca42a946e234f679292, type: 3}
+  MinionSlime: {fileID: 442926040111610581, guid: 7c234efc028a3194fa4eeb8835934264, type: 3}
+  MassSlime: {fileID: 344686873398454591, guid: cb3a6847520745640a695a141e0d9e48, type: 3}
+  BossSlime: {fileID: 3414551057703874006, guid: ace9dda3ed9af3e43a7115235586790e, type: 3}
+--- !u!135 &5434939504806726449
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338437657786522320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

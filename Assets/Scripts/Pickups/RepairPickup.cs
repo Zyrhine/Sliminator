@@ -3,15 +3,15 @@ using UnityEngine;
 public class RepairPickup : MonoBehaviour
 {
     public int repairAmount = 100;
-    public AudioSource aHeal;
+    public AudioClip ClipHeal;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            aHeal.Play();
+            GetComponent<AudioSource>().PlayOneShot(ClipHeal);
             other.gameObject.SendMessage("AddHealth", repairAmount);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
