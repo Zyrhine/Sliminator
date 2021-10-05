@@ -1300,6 +1300,9 @@ MonoBehaviour:
   HealthSlider: {fileID: 4067914657800319042}
   ShieldSlider: {fileID: 5241710607828387945}
   Ammo: {fileID: 1977916345859748291}
+  cursorTexture: {fileID: 2800000, guid: d4aeac55637134b419d44e71dbe7c9d9, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &8155811037075990303
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,12 +6,19 @@ public class GameHUD : MonoBehaviour
 {
     public float ShieldMax = 100f;
     public float HealthMax = 100f;
+
+    [Header("Components")]
     public Slider HealthSlider;
     public Slider ShieldSlider;
     public TMP_Text Ammo;
 
+    [Header("Cursor")]
+    public Texture2D cursorTexture;
+    private Vector2 hotSpot = new Vector2(128, 128);
+
     void Start()
     {
+        Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
         HealthSlider.maxValue = HealthMax;
         ShieldSlider.maxValue = ShieldMax;
     }

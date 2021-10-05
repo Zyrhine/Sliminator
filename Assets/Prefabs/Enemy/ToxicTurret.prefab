@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7724bbedb8b795e488ddfdd7983857e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aShoot: {fileID: 0}
+  aDeath: {fileID: 0}
   ToxicBlob: {fileID: 3733407473543058645, guid: b25c487cbf8e28c4a97354363fc20ac1, type: 3}
   MaxHealth: 100
   Health: 100
@@ -66,7 +68,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8259742470984098607
 Rigidbody:
@@ -213,7 +215,6 @@ GameObject:
   - component: {fileID: 8753736280283831195}
   - component: {fileID: 5117677339521058806}
   - component: {fileID: 6683590001595871537}
-  - component: {fileID: 1708425797993971329}
   m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
@@ -284,20 +285,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1708425797993971329
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6238121985499834562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &7071361092064135325
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +296,6 @@ GameObject:
   - component: {fileID: 2540426085590767144}
   - component: {fileID: 6861550106708865197}
   - component: {fileID: 7405325748529741102}
-  - component: {fileID: 7529551401588800289}
   m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
@@ -380,16 +366,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7529551401588800289
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7071361092064135325}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
