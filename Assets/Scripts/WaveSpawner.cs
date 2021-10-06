@@ -73,6 +73,8 @@ public class WaveSpawner : MonoBehaviour
         if (!WavesComplete && !WavesActive)
         {
             WavesActive = true;
+            PlayerHUD.DisplayWaves(true);
+            PlayerHUD.UpdateWave(CurrentWave + 1, 0);
         }
     }
 
@@ -153,12 +155,14 @@ public class WaveSpawner : MonoBehaviour
         }
 
         wave.HasSpawned = true;
+        PlayerHUD.UpdateWave(CurrentWave + 1, SpawnedEnemies.Count);
     }
 
     // All waves have been completed
     void Complete()
     {
         WavesComplete = true;
+        PlayerHUD.DisplayWaves(false);
         Destroy(gameObject);
     }
 
@@ -167,6 +171,7 @@ public class WaveSpawner : MonoBehaviour
     {
         // Remove them from the remaining enemies
         SpawnedEnemies.Remove(instanceId);
+        PlayerHUD.UpdateWave(CurrentWave + 1, SpawnedEnemies.Count);
     }
 
     private void OnDrawGizmos()

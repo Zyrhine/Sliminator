@@ -6,7 +6,7 @@ public sealed class VolatileSlime : Slime
     public GameObject ExplosionFX;
 
     [Header("AI")]
-    public float ExplosionRadius = 2f;
+    public float ExplosionRadius = 3f;
 
     void Update()
     {
@@ -20,6 +20,16 @@ public sealed class VolatileSlime : Slime
             case SlimeState.Chase:
                 UpdateChase();
                 break;
+        }
+
+        // Animation
+        if (agent.isStopped)
+        {
+            Anim.SetFloat("Speed", 0);
+        }
+        else
+        {
+            Anim.SetFloat("Speed", 2);
         }
     }
 

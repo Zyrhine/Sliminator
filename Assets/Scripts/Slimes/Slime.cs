@@ -18,6 +18,7 @@ public abstract class Slime : MonoBehaviour
     protected SlimeState state;
     protected AudioSource sound;
     protected Rigidbody rb;
+    public Animator Anim;
 
     [Header("Enemy Stats")]
     public float MaxHealth = 100f;
