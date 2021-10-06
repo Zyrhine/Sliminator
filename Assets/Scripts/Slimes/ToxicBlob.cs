@@ -3,7 +3,7 @@ using UnityEngine;
 public class ToxicBlob : MonoBehaviour
 {
     private Rigidbody rb;
-    public GameObject Trail;
+    private Transform trail;
 
     void Awake()
     {
@@ -12,7 +12,7 @@ public class ToxicBlob : MonoBehaviour
 
     private void Start()
     {
-        Trail = GameObject.Find("Trail");
+        trail = transform.Find("Trail");
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.up * 25);
         rb.AddForce(transform.forward * 100);
@@ -23,21 +23,17 @@ public class ToxicBlob : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("AddDamage", 25f);
-            Destroy(gameObject);
-            
         }
-        else
-        {
-            Destroy(gameObject, 0.025f);
-            
-        }
+
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        if(Trail != null){
-            Destroy(Trail, 0.5f);
+        // Disconnect the trail from the gameObject and delay its destruction
+        if (trail){
+            trail.parent = null;
+            Destroy(trail.gameObject, 0.5f);
         }
-        
     }
 }

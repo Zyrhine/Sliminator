@@ -167,7 +167,6 @@ public sealed class MinionSlime : Slime
     void MergeGroup(List<GameObject> minions, Vector3 position)
     {
         // Spawn the mass
-        Debug.Log("Spawning");
         sound.PlayOneShot(ClipCombine);
         Instantiate(MassSlime, position, Quaternion.identity);
 

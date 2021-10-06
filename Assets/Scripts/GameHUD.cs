@@ -7,7 +7,7 @@ public class GameHUD : MonoBehaviour
     public float ShieldMax = 100f;
     public float HealthMax = 100f;
 
-    private bool IsWaveMode = false;
+    private GameObject waveHUD;
     private TMP_Text waveText;
     private TMP_Text enemiesText;
 
@@ -27,13 +27,21 @@ public class GameHUD : MonoBehaviour
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
         HealthSlider.maxValue = HealthMax;
         ShieldSlider.maxValue = ShieldMax;
-        waveText = transform.Find("WaveText").GetComponent<TMP_Text>();
-        enemiesText = transform.Find("EnemiesText").GetComponent<TMP_Text>();
+
+        waveHUD = transform.Find("WaveHUD").gameObject;
+        waveText = transform.Find("WaveHUD/WaveText").GetComponent<TMP_Text>();
+        enemiesText = transform.Find("WaveHUD/EnemiesText").GetComponent<TMP_Text>();
+        DisplayWaves(false);
     }
 
     void Update()
     {
         
+    }
+
+    public void DisplayWaves(bool state)
+    {
+        waveHUD.SetActive(state);
     }
 
     public void DisplayShield(bool state)
