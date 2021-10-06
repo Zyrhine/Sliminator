@@ -24,16 +24,20 @@ public class ToxicBlob : MonoBehaviour
         {
             collision.gameObject.SendMessage("AddDamage", 25f);
             Destroy(gameObject);
+            
         }
         else
         {
             Destroy(gameObject, 0.025f);
+            
         }
     }
 
     private void OnDestroy()
     {
-        Trail.transform.parent = null;
-        Destroy(Trail, 0.5f);
+        if(Trail != null){
+            Destroy(Trail, 0.5f);
+        }
+        
     }
 }

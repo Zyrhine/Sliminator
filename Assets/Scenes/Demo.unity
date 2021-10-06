@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: aArmour
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7399794544628449045, guid: 76cbcb3da0d156141a1680af54b4d273, type: 3}
+      propertyPath: ClipArmorLost
+      value: 
+      objectReference: {fileID: 8300000, guid: 342f3829121ba214cb89d2c657f6e859, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76cbcb3da0d156141a1680af54b4d273, type: 3}
 --- !u!1001 &102251137
@@ -195,6 +199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5495580854514351769, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+      propertyPath: ClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
     - target: {fileID: 3906650343568736459, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -252,6 +260,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5495580854514351769, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+      propertyPath: ClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
     - target: {fileID: 3906650343568736459, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -638,6 +650,10 @@ PrefabInstance:
       propertyPath: aArmour
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7399794544628449045, guid: 76cbcb3da0d156141a1680af54b4d273, type: 3}
+      propertyPath: ClipArmorLost
+      value: 
+      objectReference: {fileID: 8300000, guid: 342f3829121ba214cb89d2c657f6e859, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76cbcb3da0d156141a1680af54b4d273, type: 3}
 --- !u!4 &532256132 stripped
@@ -933,6 +949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5495580854514351769, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+      propertyPath: ClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
     - target: {fileID: 3906650343568736459, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1540,6 +1560,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5495580854514351769, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+      propertyPath: ClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
     - target: {fileID: 3906650343568736459, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1723,6 +1747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5495580854514351769, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
+      propertyPath: ClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
     - target: {fileID: 3906650343568736459, guid: b9bd0b6a1a58f3e4d983bf25a3957f75, type: 3}
       propertyPath: m_RootOrder
       value: 17
