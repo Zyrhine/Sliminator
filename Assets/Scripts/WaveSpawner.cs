@@ -110,6 +110,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnWave(EnemyWave wave)
     {
+        int point = 0;
         foreach (EnemyGroup group in wave.Enemies)
         {
             GameObject enemyPrefab = null;
@@ -139,8 +140,15 @@ public class WaveSpawner : MonoBehaviour
             for (int i = 0; i < group.Amount; i++)
             {
                 // Pick a random spawn location from locations
-                Random.InitState(System.DateTime.Now.Millisecond);
-                Vector3 spawn = SpawnPoints[Random.Range(0, SpawnPoints.Count - 1)].position;
+                Random.InitState(i);
+                Vector3 spawn = SpawnPoints[point].position;
+                if (point < SpawnPoints.Count - 1)
+                {
+                    point++;
+                } else
+                {
+                    point = 0;
+                }
                 Vector3 position = new Vector3(spawn.x + Random.Range(-3f, 3f), spawn.y, spawn.z + Random.Range(-3f, 3f));
 
                 // Spawn the enemy

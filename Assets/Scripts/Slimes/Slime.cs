@@ -8,6 +8,7 @@ public abstract class Slime : MonoBehaviour
         Search,
         Chase,
         Explode,
+        ChargeUp,
         Charge,
         Merge
     }

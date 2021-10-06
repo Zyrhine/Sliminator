@@ -63,15 +63,15 @@ public class Player : MonoBehaviour
         firePoint2 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head/Arm.R/Gun.R");
         firePoint3 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head");
 
-        aimPlane = new Plane(Vector3.up, new Vector3(0, 0.25f, 0));
-
         RefreshHUD();
     }
 
     void Update()
     {
-        // Player movement
+        // Update the aimPlane
+        aimPlane = new Plane(Vector3.up, new Vector3(0, transform.position.y + 0.25f, 0));
 
+        // Player movement
         if (dashing)
         {
             UpdateDash();
@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
         {
             UpdateMovement();
         }
-
 
         // Player shoot at fire rate
         if (Input.GetButton("Fire"))
