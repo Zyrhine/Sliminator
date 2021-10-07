@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 1508e9d895723634398c282189e65f3b
+timeCreated: 1474004956
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: TerrainMesh
+    100004: TerrainMesh.000
+    100006: TerrainMesh.001
+    100008: TerrainMesh.002
+    100010: TerrainMesh.003
+    100012: TerrainMesh.003_MeshPart0
+    100014: TerrainMesh.003_MeshPart1
+    100016: TerrainMesh.003_MeshPart2
+    100018: TerrainMesh.003_MeshPart3
+    100020: TerrainMesh.004
+    100022: TerrainMesh.004_MeshPart0
+    100024: TerrainMesh.004_MeshPart1
+    100026: TerrainMesh.004_MeshPart2
+    100028: TerrainMesh.004_MeshPart3
+    100030: TerrainMesh.005
+    100032: TerrainMesh.006
+    100034: TerrainMesh.007
+    100036: TerrainMesh.008
+    100038: TerrainMesh.009
+    100040: TerrainMesh.010
+    100042: TerrainMesh.011
+    100044: TerrainMesh.012
+    100046: TerrainMesh.013
+    100048: TerrainMesh.014
+    100050: TerrainMesh.015
+    400000: //RootNode
+    400002: TerrainMesh
+    400004: TerrainMesh.000
+    400006: TerrainMesh.001
+    400008: TerrainMesh.002
+    400010: TerrainMesh.003
+    400012: TerrainMesh.003_MeshPart0
+    400014: TerrainMesh.003_MeshPart1
+    400016: TerrainMesh.003_MeshPart2
+    400018: TerrainMesh.003_MeshPart3
+    400020: TerrainMesh.004
+    400022: TerrainMesh.004_MeshPart0
+    400024: TerrainMesh.004_MeshPart1
+    400026: TerrainMesh.004_MeshPart2
+    400028: TerrainMesh.004_MeshPart3
+    400030: TerrainMesh.005
+    400032: TerrainMesh.006
+    400034: TerrainMesh.007
+    400036: TerrainMesh.008
+    400038: TerrainMesh.009
+    400040: TerrainMesh.010
+    400042: TerrainMesh.011
+    400044: TerrainMesh.012
+    400046: TerrainMesh.013
+    400048: TerrainMesh.014
+    400050: TerrainMesh.015
+    2300000: TerrainMesh
+    2300002: TerrainMesh.000
+    2300004: TerrainMesh.001
+    2300006: TerrainMesh.002
+    2300008: TerrainMesh.003_MeshPart0
+    2300010: TerrainMesh.003_MeshPart1
+    2300012: TerrainMesh.003_MeshPart2
+    2300014: TerrainMesh.003_MeshPart3
+    2300016: TerrainMesh.004_MeshPart0
+    2300018: TerrainMesh.004_MeshPart1
+    2300020: TerrainMesh.004_MeshPart2
+    2300022: TerrainMesh.004_MeshPart3
+    2300024: TerrainMesh.005
+    2300026: TerrainMesh.006
+    2300028: TerrainMesh.007
+    2300030: TerrainMesh.008
+    2300032: TerrainMesh.009
+    2300034: TerrainMesh.010
+    2300036: TerrainMesh.011
+    2300038: TerrainMesh.012
+    2300040: TerrainMesh.013
+    2300042: TerrainMesh.014
+    2300044: TerrainMesh.015
+    2300046: //RootNode
+    3300000: TerrainMesh
+    3300002: TerrainMesh.000
+    3300004: TerrainMesh.001
+    3300006: TerrainMesh.002
+    3300008: TerrainMesh.003_MeshPart0
+    3300010: TerrainMesh.003_MeshPart1
+    3300012: TerrainMesh.003_MeshPart2
+    3300014: TerrainMesh.003_MeshPart3
+    3300016: TerrainMesh.004_MeshPart0
+    3300018: TerrainMesh.004_MeshPart1
+    3300020: TerrainMesh.004_MeshPart2
+    3300022: TerrainMesh.004_MeshPart3
+    3300024: TerrainMesh.005
+    3300026: TerrainMesh.006
+    3300028: TerrainMesh.007
+    3300030: TerrainMesh.008
+    3300032: TerrainMesh.009
+    3300034: TerrainMesh.010
+    3300036: TerrainMesh.011
+    3300038: TerrainMesh.012
+    3300040: TerrainMesh.013
+    3300042: TerrainMesh.014
+    3300044: TerrainMesh.015
+    3300046: //RootNode
+    4300000: TerrainMesh.015
+    4300002: TerrainMesh.014
+    4300004: TerrainMesh.012
+    4300006: TerrainMesh.013
+    4300008: TerrainMesh.011
+    4300010: TerrainMesh.010
+    4300012: TerrainMesh.007
+    4300014: TerrainMesh.005
+    4300016: TerrainMesh
+    4300018: TerrainMesh.004_MeshPart0
+    4300020: TerrainMesh.004_MeshPart1
+    4300022: TerrainMesh.004_MeshPart2
+    4300024: TerrainMesh.004_MeshPart3
+    4300026: TerrainMesh.009
+    4300028: TerrainMesh.008
+    4300030: TerrainMesh.003_MeshPart0
+    4300032: TerrainMesh.003_MeshPart1
+    4300034: TerrainMesh.003_MeshPart2
+    4300036: TerrainMesh.003_MeshPart3
+    4300038: TerrainMesh.006
+    4300040: TerrainMesh.000
+    4300042: TerrainMesh.002
+    4300044: TerrainMesh.001
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

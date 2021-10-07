@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 84c82344979271e498fe5789eb408089
+timeCreated: 1477382421
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube.200
+    100004: Torus.004
+    100006: Torus.005
+    100008: Torus.006
+    100010: Torus.008
+    100012: Torus.009
+    100014: Torus.010
+    100016: Torus.011
+    100018: Torus.012
+    100020: Torus.013
+    100022: Torus.014
+    100024: Torus.015
+    100026: Torus.016
+    100028: Torus.017
+    100030: Torus.018
+    100032: Torus.019
+    100034: Torus.020
+    100036: Torus.021
+    100038: Torus.022
+    100040: Torus.023
+    100042: Torus.024
+    400000: //RootNode
+    400002: Cube.200
+    400004: Torus.004
+    400006: Torus.005
+    400008: Torus.006
+    400010: Torus.008
+    400012: Torus.009
+    400014: Torus.010
+    400016: Torus.011
+    400018: Torus.012
+    400020: Torus.013
+    400022: Torus.014
+    400024: Torus.015
+    400026: Torus.016
+    400028: Torus.017
+    400030: Torus.018
+    400032: Torus.019
+    400034: Torus.020
+    400036: Torus.021
+    400038: Torus.022
+    400040: Torus.023
+    400042: Torus.024
+    2300000: //RootNode
+    2300002: Cube.200
+    2300004: Torus.004
+    2300006: Torus.005
+    2300008: Torus.006
+    2300010: Torus.008
+    2300012: Torus.009
+    2300014: Torus.010
+    2300016: Torus.011
+    2300018: Torus.012
+    2300020: Torus.013
+    2300022: Torus.014
+    2300024: Torus.015
+    2300026: Torus.016
+    2300028: Torus.017
+    2300030: Torus.018
+    2300032: Torus.019
+    2300034: Torus.020
+    2300036: Torus.021
+    2300038: Torus.022
+    2300040: Torus.023
+    2300042: Torus.024
+    3300000: //RootNode
+    3300002: Cube.200
+    3300004: Torus.004
+    3300006: Torus.005
+    3300008: Torus.006
+    3300010: Torus.008
+    3300012: Torus.009
+    3300014: Torus.010
+    3300016: Torus.011
+    3300018: Torus.012
+    3300020: Torus.013
+    3300022: Torus.014
+    3300024: Torus.015
+    3300026: Torus.016
+    3300028: Torus.017
+    3300030: Torus.018
+    3300032: Torus.019
+    3300034: Torus.020
+    3300036: Torus.021
+    3300038: Torus.022
+    3300040: Torus.023
+    3300042: Torus.024
+    4300000: Cube.200
+    4300002: Torus.016
+    4300004: Torus.015
+    4300006: Torus.014
+    4300008: Torus.013
+    4300010: Torus.012
+    4300012: Torus.011
+    4300014: Torus.010
+    4300016: Torus.009
+    4300018: Torus.008
+    4300020: Torus.006
+    4300022: Torus.004
+    4300024: Torus.005
+    4300026: Torus.024
+    4300028: Torus.023
+    4300030: Torus.022
+    4300032: Torus.021
+    4300034: Torus.020
+    4300036: Torus.019
+    4300038: Torus.018
+    4300040: Torus.017
+    4300042: Cube.207
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

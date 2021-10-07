@@ -395,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundAudio
       objectReference: {fileID: 0}
+    - target: {fileID: 6954040280899482862, guid: 5d7018d80c89e0a468d2ebd4374736ac, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0922e847c94843b418f496c00a477984, type: 3}
     - target: {fileID: 6954040280899482863, guid: 5d7018d80c89e0a468d2ebd4374736ac, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -872,6 +876,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680951612055845573, guid: 89af689e1d1f96e42bfe11754748c537, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680951612055845573, guid: 89af689e1d1f96e42bfe11754748c537, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5680951612055845573, guid: 89af689e1d1f96e42bfe11754748c537, type: 3}
