@@ -17,9 +17,10 @@ public sealed class ToxicTurret : Slime
     [Header("Prefabs")]
     public GameObject ToxicBlob;
 
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
 
         if (fireInterval <= 0f)
         {

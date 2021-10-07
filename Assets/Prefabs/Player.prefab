@@ -93,41 +93,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!95 &4463859522728839335
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4467917294729167250}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e1b8b1400e3ed0049a5a64aecadfb08b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2560820301170461530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4467917294729167250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcef60afff0049a408e730a25f3183bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Footsteps:
-  - {fileID: 8300000, guid: bb2cbbd485e619c46970cd6ec8527e52, type: 3}
-  - {fileID: 8300000, guid: 9d142a933ac0bf049af3d58ed78e75a4, type: 3}
-  - {fileID: 8300000, guid: cda0f5d83b1e6c54b932ae6e7fb03d5e, type: 3}
 --- !u!82 &2290745847827607974
 AudioSource:
   m_ObjectHideFlags: 0
@@ -224,6 +189,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4463859522728839335
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467917294729167250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1b8b1400e3ed0049a5a64aecadfb08b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2560820301170461530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467917294729167250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcef60afff0049a408e730a25f3183bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+  - {fileID: 8300000, guid: bb2cbbd485e619c46970cd6ec8527e52, type: 3}
+  - {fileID: 8300000, guid: 9d142a933ac0bf049af3d58ed78e75a4, type: 3}
+  - {fileID: 8300000, guid: cda0f5d83b1e6c54b932ae6e7fb03d5e, type: 3}
 --- !u!1 &6321354264933296147
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,14 @@ MonoBehaviour:
   ShieldRechargeDelay: 5
   Bullet: {fileID: 8690018707753453145, guid: fc5f3087010a8c7488230f864b310015, type: 3}
   MortarMine: {fileID: 2115530896675567973, guid: 1494052695fd15c4e91f0e71c638d47a, type: 3}
+  DeathFX: {fileID: 100014, guid: 4be461bdf6702f64298fb518ce64cc1d, type: 3}
   HUD: {fileID: 8243615452767220337}
+  ClipDamageImpacts:
+  - {fileID: 8300000, guid: 7e1b307156779254690a9333c49e3773, type: 3}
+  - {fileID: 8300000, guid: 8be0690036fa97d448d8f5d96c9a3f5b, type: 3}
+  - {fileID: 8300000, guid: 90c2dc6b40f928d4097419e5bd4c1d4a, type: 3}
+  - {fileID: 8300000, guid: e18da735ed91bed4a8ec624f3be639c0, type: 3}
+  ClipDeath: {fileID: 8300000, guid: 0298eefc5122167499df876048f8959f, type: 3}
 --- !u!54 &3748761614445867122
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -537,6 +544,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3592459854600973132, guid: 1989435401541ea448caf83fe4af3e27, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3923671370549361121, guid: 1989435401541ea448caf83fe4af3e27, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -551,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946028966217059323, guid: 1989435401541ea448caf83fe4af3e27, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4262006921774679147, guid: 1989435401541ea448caf83fe4af3e27, type: 3}
       propertyPath: m_AnchorMax.x

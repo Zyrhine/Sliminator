@@ -17,9 +17,10 @@ public sealed class MinionSlime : Slime
     [Header("Prefabs")]
     public GameObject MassSlime;
 
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
 
         if (alarmed && !hasGroup)
         {

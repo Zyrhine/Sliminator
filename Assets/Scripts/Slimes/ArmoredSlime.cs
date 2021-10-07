@@ -14,15 +14,24 @@ public sealed class ArmoredSlime : Slime
 
     [Header("AI")]
     public float ChaseRange = 10f;
-    public float AttackRange = 2f;
+    public float AttackRange = 3f;
     public List<GameObject> PatrolPoints = new List<GameObject>();
 
     [Header("Sounds")]
     public AudioClip ClipArmorLost;
 
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
+
+        if (agent.isStopped)
+        {
+            Anim.SetFloat("Speed", 0);
+        } else
+        {
+            Anim.SetFloat("Speed", 1);
+        }
 
         switch (state)
         {
@@ -60,7 +69,7 @@ public sealed class ArmoredSlime : Slime
     void UpdateChase()
     {
         // Close enough to attack
-        if (Vector2.Distance(transform.position, target.transform.position) <= AttackRange)
+        if (Vector3.Distance(transform.position, target.transform.position) <= AttackRange)
         {
             if (attackInterval <= 0)
             {
@@ -76,7 +85,7 @@ public sealed class ArmoredSlime : Slime
         }
 
         // Has gone out of target range
-        if (Vector2.Distance(transform.position, target.transform.position) > ChaseRange)
+        if (Vector3.Distance(transform.position, target.transform.position) > ChaseRange)
         {
             state = SlimeState.Search;
         }
@@ -85,6 +94,8 @@ public sealed class ArmoredSlime : Slime
     // Attack the player
     void Attack()
     {
+        Debug.Log("Attacking");
+        Anim.SetTrigger("Attack");
         target.SendMessage("AddDamage", 25);
 
         // Reset attack cooldown
@@ -115,5 +126,10 @@ public sealed class ArmoredSlime : Slime
         {
             Die();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 }

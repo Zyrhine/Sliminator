@@ -5,6 +5,7 @@ public abstract class Slime : MonoBehaviour
 {
     public enum SlimeState
     {
+        Idle,
         Search,
         Chase,
         Explode,
@@ -38,6 +39,14 @@ public abstract class Slime : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = MoveSpeed;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    protected virtual void Update()
+    {
+        if (!target)
+        {
+            state = SlimeState.Idle;
+        }
     }
 
     void SetOwner(GameObject gameObject)

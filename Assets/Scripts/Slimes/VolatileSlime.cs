@@ -8,9 +8,10 @@ public sealed class VolatileSlime : Slime
     [Header("AI")]
     public float ExplosionRadius = 3f;
 
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
 
         switch (state)
         {

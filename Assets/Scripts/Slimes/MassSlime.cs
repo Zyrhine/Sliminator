@@ -20,9 +20,10 @@ public sealed class MassSlime : Slime
         defaultAcceleration = agent.acceleration;
     }
 
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
 
         if (agent.isStopped)
         {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     private Transform firePoint1;
     private Transform firePoint2;
     private Transform firePoint3;
-    private Transform respawnPoint;
+    private Vector3 respawnPoint;
 
     [HideInInspector] public Vector3 aimPos;
     private Plane aimPlane;
@@ -49,11 +50,17 @@ public class Player : MonoBehaviour
     [Header("Prefabs")]
     public GameObject Bullet;
     public GameObject MortarMine;
+    public GameObject DeathFX;
     public GameHUD HUD;
+
+    [Header("Sounds")]
+    public AudioClip[] ClipDamageImpacts;
+    public AudioClip ClipDeath;
 
     // Start is called before the first frame update
     void Start()
     {
+        respawnPoint = transform.position;
         camera = Camera.main;
         sound = GetComponent<AudioSource>();
         rb = GetComponentInChildren<Rigidbody>();
@@ -254,6 +261,9 @@ public class Player : MonoBehaviour
     // Take damage from a hit
     void AddDamage(float damage)
     {
+        int i = Random.Range(0, ClipDamageImpacts.Length - 1);
+        sound.PlayOneShot(ClipDamageImpacts[i]);
+
         if (HasShield)
         {
             if (Shield >= damage)
@@ -280,14 +290,18 @@ public class Player : MonoBehaviour
 
         if (Health <= 0f)
         {
-            // Die instantly
-            
+            Die();
         }
     }
 
     void Die()
     {
-        // Play explosion animation
+        // Play death sound
+        sound.PlayOneShot(ClipDeath);
+
+        // Create death explosion
+        GameObject explosion = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        Destroy(explosion, 3f);
 
         if (Lives > 1)
         {
@@ -303,11 +317,11 @@ public class Player : MonoBehaviour
 
     void Respawn()
     {
-        transform.position = respawnPoint.position;
+        transform.position = respawnPoint;
         Health = MaxHealth;
     }
 
-    void SetRespawnPoint(Transform position)
+    void SetRespawnPoint(Vector3 position)
     {
         respawnPoint = position;
     }

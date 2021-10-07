@@ -1,7 +1,8 @@
 public sealed class BossSlime : Slime
 {
-    void Update()
+    protected override void Update()
     {
         if (!Alive) return;
+        base.Update();
     }
 }

@@ -18751,7 +18751,7 @@ GameObject:
   - component: {fileID: 400014}
   - component: {fileID: 19800014}
   m_Layer: 0
-  m_Name: Explosion single soft
+  m_Name: PlayerDeathExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
