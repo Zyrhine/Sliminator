@@ -3,7 +3,32 @@ guid: 5a71187f159d8144890979aa6bfc20dd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BalconyTiles
+    second: {fileID: 2100000, guid: 8523b47823962b244849ad4c1c6ce933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 0dd3c394f7cc8f44cbc87353393d5745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RearUpperWindows
+    second: {fileID: 2100000, guid: 75bb008e035d6164e93d52f6e0c01953, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sides
+    second: {fileID: 2100000, guid: b89a7023cf17dcb488ff026e91798635, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteTrim
+    second: {fileID: 2100000, guid: 5509fb45eae294b4e87154f25ef79f77, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

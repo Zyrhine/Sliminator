@@ -7,9 +7,12 @@ public class GameHUD : MonoBehaviour
     public float ShieldMax = 100f;
     public float HealthMax = 100f;
 
+    private GameObject bossHUD;
+    private Slider bossHealthSlider;
     private GameObject waveHUD;
     private TMP_Text waveText;
     private TMP_Text enemiesText;
+    private GameObject mortarIcon;
 
     [Header("Components")]
     public Slider HealthSlider;
@@ -29,9 +32,14 @@ public class GameHUD : MonoBehaviour
         ShieldSlider.maxValue = ShieldMax;
 
         waveHUD = transform.Find("WaveHUD").gameObject;
+        bossHUD = transform.Find("BossHUD").gameObject;
+        bossHealthSlider = transform.Find("BossHUD/BossHealthSlider").GetComponent<Slider>();
         waveText = transform.Find("WaveHUD/WaveText").GetComponent<TMP_Text>();
         enemiesText = transform.Find("WaveHUD/EnemiesText").GetComponent<TMP_Text>();
+        mortarIcon = transform.Find("MortarMineIcon").gameObject;
         DisplayWaves(false);
+        DisplayBoss(false);
+        DisplayMortarCharges(false);
     }
 
     void Update()
@@ -44,6 +52,22 @@ public class GameHUD : MonoBehaviour
         waveHUD.SetActive(state);
     }
 
+    public void DisplayBoss(bool state)
+    {
+        bossHUD.SetActive(state);
+        if (state == true)
+        {
+            var anim = bossHUD.GetComponent<Animator>();
+            anim.SetTrigger("Activate");
+        }
+    }
+
+    public void UpdateBoss(float health, float healthMax)
+    {
+        bossHealthSlider.maxValue = healthMax;
+        bossHealthSlider.value = health;
+    }
+
     public void DisplayShield(bool state)
     {
         ShieldIcon.SetActive(state);
@@ -53,6 +77,12 @@ public class GameHUD : MonoBehaviour
     public void UpdateAmmo(int ammo)
     {
         Ammo.text = ammo.ToString();
+    }
+
+    public void DisplayMortarCharges(bool state)
+    {
+        mortarIcon.SetActive(state);
+        MortarAmmo.gameObject.SetActive(state);
     }
 
     public void UpdateMortarCharges(int charges)

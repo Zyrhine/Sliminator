@@ -73,7 +73,7 @@ MonoBehaviour:
   MoveSpeed: 10
   ClipDeath: {fileID: 8300000, guid: 62f87a12223d8cf4cbdc26b9d9b967bb, type: 3}
   ExplosionFX: {fileID: 100016, guid: c9afa2a2ad89ebc41897c1247ceddadd, type: 3}
-  ExplosionRadius: 3
+  ExplosionRadius: 5
 --- !u!65 &7925503866276465771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8708806970924145656}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

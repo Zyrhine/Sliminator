@@ -56,10 +56,14 @@ public class Player : MonoBehaviour
     [Header("Sounds")]
     public AudioClip[] ClipDamageImpacts;
     public AudioClip ClipDeath;
+    public AudioClip ClipMortarLaunch;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Load unlocked abilities
+        LoadAbilities();
+
         respawnPoint = transform.position;
         camera = Camera.main;
         sound = GetComponent<AudioSource>();
@@ -139,7 +143,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Regenerate shield after delay
+    /// <summary>
+    /// Regenerate the player shield by the recharge rate if not on cooldown.
+    /// </summary>
     void RegenerateShield()
     {
         if (shieldRechargeCounter > 0)
@@ -330,6 +336,7 @@ public class Player : MonoBehaviour
     {
         HUD.DisplayShield(HasShield);
         HUD.UpdateAmmo(Ammo);
+        HUD.DisplayMortarCharges(HasMortarMine);
         HUD.UpdateMortarCharges(MortarCharges);
         HUD.UpdateShield(Shield);
         HUD.UpdateHealth(Health);
@@ -347,6 +354,44 @@ public class Player : MonoBehaviour
         }
 
         HUD.UpdateHealth(Health);
+    }
+
+    /// <summary>
+    /// Enables a player ability.
+    /// </summary>
+    /// <param name="ability"></param>
+    void UnlockAbility(PlayerAbility ability)
+    {
+        switch (ability)
+        {
+            case PlayerAbility.Dash:
+                HasDash = true;
+                PlayerPrefs.SetInt("HasDash", 1);
+                break;
+            case PlayerAbility.MortarMine:
+                HasMortarMine = true;
+                PlayerPrefs.SetInt("HasMortarMine", 1);
+                break;
+            case PlayerAbility.Resistance:
+                HasResistance = true;
+                PlayerPrefs.SetInt("HasResistance", 1);
+                break;
+            case PlayerAbility.Shield:
+                HasShield = true;
+                PlayerPrefs.SetInt("HasShield", 1);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Loads the currently unlocked abilities.
+    /// </summary>
+    void LoadAbilities()
+    {
+        HasDash = PlayerPrefs.GetInt("HasDash", 0) == 1;
+        HasMortarMine = PlayerPrefs.GetInt("HasMortarMine", 0) == 1;
+        HasResistance = PlayerPrefs.GetInt("HasResistance", 0) == 1;
+        HasShield = PlayerPrefs.GetInt("HasShield", 0) == 1;
     }
 
     void LateUpdate()
@@ -367,5 +412,13 @@ public class Player : MonoBehaviour
     {
         Ammo += ammo;
         HUD.UpdateAmmo(Ammo);
+    }
+
+    public enum PlayerAbility
+    {
+        Dash,
+        Shield,
+        MortarMine,
+        Resistance
     }
 }

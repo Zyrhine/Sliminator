@@ -17,11 +17,29 @@ public sealed class MinionSlime : Slime
     [Header("Prefabs")]
     public GameObject MassSlime;
 
+    private ParticleSystem trail;
+
+    protected override void Start()
+    {
+        base.Start();
+        trail = transform.Find("Trail").GetComponent<ParticleSystem>();
+    }
+
     protected override void Update()
     {
         if (!Alive) return;
         base.Update();
 
+        // Animation
+        if (agent.isStopped)
+        {
+            Anim.SetFloat("Speed", 0);
+        } else
+        {
+            Anim.SetFloat("Speed", 1);
+        }
+
+        // Grouping
         if (alarmed && !hasGroup)
         {
             CheckForMerge();
@@ -32,6 +50,7 @@ public sealed class MinionSlime : Slime
             state = SlimeState.Merge;
         }
 
+        // States
         switch (state)
         {
             case SlimeState.Search:
@@ -176,6 +195,16 @@ public sealed class MinionSlime : Slime
         {
             Destroy(minion);
         }
+    }
+
+    protected override void Die(float delay = 1)
+    {
+        base.Die(delay);
+
+        // Disconnect the particle system and delay its destruction
+        trail.transform.parent = null;
+        trail.Stop();
+        Destroy(trail, 5f);
     }
 
     private void OnDrawGizmos()

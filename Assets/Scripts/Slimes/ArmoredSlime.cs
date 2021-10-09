@@ -14,7 +14,7 @@ public sealed class ArmoredSlime : Slime
 
     [Header("AI")]
     public float ChaseRange = 10f;
-    public float AttackRange = 3f;
+    public float AttackRange = 4f;
     public List<GameObject> PatrolPoints = new List<GameObject>();
 
     [Header("Sounds")]

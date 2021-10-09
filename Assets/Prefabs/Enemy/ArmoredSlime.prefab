@@ -57,7 +57,7 @@ MonoBehaviour:
   Armor: 100
   AttackSpeed: 2.5
   ChaseRange: 20
-  AttackRange: 2
+  AttackRange: 4
   PatrolPoints: []
   ClipArmorLost: {fileID: 8300000, guid: bbc233e6c3e211640b92c7e29ec8486a, type: 3}
 --- !u!65 &6499739868789338681

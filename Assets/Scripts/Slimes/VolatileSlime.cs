@@ -50,7 +50,7 @@ public sealed class VolatileSlime : Slime
 
         var targetDistance = Vector3.Distance(transform.position, target.transform.position);
 
-        if (targetDistance < 1f)
+        if (targetDistance <= ExplosionRadius - 1)
         {
             // Explode
             Die(0.25f);
@@ -84,6 +84,7 @@ public sealed class VolatileSlime : Slime
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, ExplosionRadius);
     }
 }
