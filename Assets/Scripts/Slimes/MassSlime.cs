@@ -25,15 +25,6 @@ public sealed class MassSlime : Slime
         if (!Alive) return;
         base.Update();
 
-        if (agent.isStopped)
-        {
-            Anim.SetFloat("Speed", 0);
-        }
-        else
-        {
-            Anim.SetFloat("Speed", 2);
-        }
-
         switch (state)
         {
             case SlimeState.Search:

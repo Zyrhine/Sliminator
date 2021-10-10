@@ -7918,6 +7918,38 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1772969895999632798, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772969895999632798, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772969895999632798, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772969895999632798, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924698544459183628, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924698544459183628, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924698544459183628, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924698544459183628, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3846658001119699867, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7936,6 +7968,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4049877316123450897, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866774180722902493, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866774180722902493, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866774180722902493, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866774180722902493, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5044199456306257581, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
@@ -7960,6 +8008,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099102397239200477, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122060561923285679, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122060561923285679, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122060561923285679, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122060561923285679, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9210533337581208714, guid: a7b2799eb54baa54ab4994e7c82d0ed5, type: 3}
@@ -35286,8 +35350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd15cbbeb80414648bab7c15830b8255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allWindows:
-  - {fileID: 0}
+  _allWindows: []
   _prefabManagementWindow: {fileID: 0}
   _objectPlacementSettingsWindow: {fileID: 0}
   _prefabsToCategoryDropSettingsWindow: {fileID: 0}

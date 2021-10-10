@@ -22,16 +22,6 @@ public sealed class VolatileSlime : Slime
                 UpdateChase();
                 break;
         }
-
-        // Animation
-        if (agent.isStopped)
-        {
-            Anim.SetFloat("Speed", 0);
-        }
-        else
-        {
-            Anim.SetFloat("Speed", 2);
-        }
     }
 
     void UpdateSearch()

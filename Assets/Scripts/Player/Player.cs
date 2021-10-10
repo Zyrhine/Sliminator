@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Dash Ability Settings
+    private Vector3 dashDirection;
+    private bool dashing = false;
+    private float dashLength = 0.25f;
+    private float dashSpeed = 30f;
+    private float dashInterval = 0f;
+
     // Components
     private new Camera camera;
     private Rigidbody rb;
@@ -59,12 +66,12 @@ public class Player : MonoBehaviour
     public AudioClip ClipDeath;
     public AudioClip ClipMortarLaunch;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Load unlocked abilities
         LoadAbilities();
 
+        // Get component references
         respawnPoint = transform.position;
         camera = Camera.main;
         sound = GetComponent<AudioSource>();
@@ -76,6 +83,7 @@ public class Player : MonoBehaviour
         firePoint3 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head");
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
+        // Update the hud with the initial player state
         RefreshHUD();
     }
 
@@ -94,12 +102,13 @@ public class Player : MonoBehaviour
             UpdateMovement();
         }
 
-        // Player shoot at fire rate
+        // Fire the primary weapon
         if (Input.GetButton("Fire"))
         {
             PrimaryFire();
         }
 
+        // Fire the secondary weapon
         if (HasMortarMine)
         {
             if (Input.GetButtonDown("Fire2"))
@@ -115,6 +124,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fires the primary weapon.
+    /// </summary>
     void PrimaryFire()
     {
         if (Ammo > 0 && fireInterval <= 0f)
@@ -133,6 +145,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fires the secondary weapon.
+    /// </summary> 
     void SecondaryFire()
     {
         if (MortarCharges > 0)
@@ -141,6 +156,8 @@ public class Player : MonoBehaviour
             levelManager.AddAmmoUsed();
             HUD.UpdateMortarCharges(MortarCharges);
             Rigidbody mortar = Instantiate(MortarMine, firePoint3.position + firePoint3.forward * 2f, firePoint3.rotation).GetComponent<Rigidbody>();
+
+            // Arc the projectile with gravity
             mortar.AddForce(mortar.transform.up * 25);
             mortar.AddForce(mortar.transform.forward * 1000);
         }
@@ -240,21 +257,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    Vector3 dashDirection;
-    bool dashing = false;
-    float dashLength = 0.25f;
-    float dashSpeed = 30f;
-    float dashInterval = 0f;
-
     private void FixedUpdate()
     {
         // Generate a ray from the cursor position
         Ray RayCast = camera.ScreenPointToRay(Input.mousePosition);
-
-        // Determine the point where the cursor ray intersects the plane.
         float HitDist = 0;
 
-        // If the ray is parallel to the plane, Raycast will return false.
         if (aimPlane.Raycast(RayCast, out HitDist))
         {
             // Get the point along the ray that hits the calculated distance.
@@ -267,7 +275,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Take damage from a hit
+    void LateUpdate()
+    {
+        // Apply rotations ontop of animation
+        turretTransform.rotation = goalRot;
+        firePoint1.rotation = firePoint1GoalRot;
+        firePoint2.rotation = firePoint2GoalRot;
+    }
+
+    /// <summary>
+    /// Take damage from a hit
+    /// </summary>
+    /// <param name="damage"></param>
     void AddDamage(float damage)
     {
         int i = Random.Range(0, ClipDamageImpacts.Length - 1);
@@ -303,6 +322,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sequence to take place upon the death of the player.
+    /// </summary>
     void Die()
     {
         // Play death sound
@@ -314,27 +336,38 @@ public class Player : MonoBehaviour
 
         if (Lives > 1)
         {
+            // Respawn
             Lives--;
             Respawn();
         } else
         {
+            // Game Over
             Destroy(gameObject);
-
-            // Trigger game over
+            HUD.DisplayFailScreen(true);
         }
     }
 
+    /// <summary>
+    /// Respawn the player at the current checkpoint.
+    /// </summary>
     void Respawn()
     {
         transform.position = respawnPoint;
         Health = MaxHealth;
     }
 
+    /// <summary>
+    /// Updates the position of the checkpoint.
+    /// </summary>
+    /// <param name="position"></param>
     void SetRespawnPoint(Vector3 position)
     {
         respawnPoint = position;
     }
 
+    /// <summary>
+    /// Update the GameHUD with the current player state.
+    /// </summary>
     void RefreshHUD()
     {
         HUD.DisplayShield(HasShield);
@@ -345,7 +378,10 @@ public class Player : MonoBehaviour
         HUD.UpdateHealth(Health);
     }
 
-    // Regain health
+    /// <summary>
+    /// Add health back to the player.
+    /// </summary>
+    /// <param name="health"></param>
     void AddHealth(float health)
     {
         Health += health;
@@ -357,6 +393,16 @@ public class Player : MonoBehaviour
         }
 
         HUD.UpdateHealth(Health);
+    }
+
+    /// <summary>
+    /// Add ammo to the player's primary fire.
+    /// </summary>
+    /// <param name="ammo"></param>
+    public void AddAmmo(int ammo)
+    {
+        Ammo += ammo;
+        HUD.UpdateAmmo(Ammo);
     }
 
     /// <summary>
@@ -399,24 +445,11 @@ public class Player : MonoBehaviour
         HasShield = PlayerPrefs.GetInt("HasShield", 0) == 1;
     }
 
-    void LateUpdate()
-    {
-        // Apply rotations ontop of animation
-        turretTransform.rotation = goalRot;
-        firePoint1.rotation = firePoint1GoalRot;
-        firePoint2.rotation = firePoint2GoalRot;
-    }
-
     void OnDrawGizmos()
     {
+        // Highlight where the player is aiming
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(aimPos, 1f);
-    }
-
-    public void AddAmmo(int ammo)
-    {
-        Ammo += ammo;
-        HUD.UpdateAmmo(Ammo);
     }
 
     public enum PlayerAbility

@@ -191,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rotator: {fileID: 114150089468779966}
   Ability: 1
+  AbilityPopup: {fileID: 6106054673758784059, guid: be1cf7c952e873a46aa72ad02a515079, type: 3}
 --- !u!33 &33513056351287132
 MeshFilter:
   m_ObjectHideFlags: 0

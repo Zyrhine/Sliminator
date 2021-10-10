@@ -30,15 +30,6 @@ public sealed class MinionSlime : Slime
         if (!Alive) return;
         base.Update();
 
-        // Animation
-        if (agent.isStopped)
-        {
-            Anim.SetFloat("Speed", 0);
-        } else
-        {
-            Anim.SetFloat("Speed", 1);
-        }
-
         // Grouping
         if (alarmed && !hasGroup)
         {

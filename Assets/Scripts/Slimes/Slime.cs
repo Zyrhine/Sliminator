@@ -49,6 +49,16 @@ public abstract class Slime : MonoBehaviour
         {
             state = SlimeState.Idle;
         }
+
+        // Move Animation
+        if (agent.isStopped)
+        {
+            Anim.SetFloat("Speed", 0);
+        }
+        else
+        {
+            Anim.SetFloat("Speed", 1);
+        }
     }
 
     void SetOwner(GameObject gameObject)

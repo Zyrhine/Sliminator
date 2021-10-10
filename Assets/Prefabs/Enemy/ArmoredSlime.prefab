@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 8089932961927147060}
-  MaxHealth: 200
-  Health: 200
+  MaxHealth: 500
+  Health: 500
   MoveSpeed: 8
   ClipDeath: {fileID: 8300000, guid: 0a985677d21096b4985ccd30ce978b37, type: 3}
   PlateArmor: {fileID: 44175190189549769}
