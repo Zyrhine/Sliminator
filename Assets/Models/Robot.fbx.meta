@@ -15,7 +15,26 @@ ModelImporter:
   - first:
       74: -3924761512748030899
     second: Robot|Dash
-  externalObjects: {}
+  - first:
+      74: -8366069038249996965
+    second: Robot|1-Idle
+  - first:
+      74: 1436919237903196432
+    second: Robot|2-Walk
+  - first:
+      74: 1943786762303033747
+    second: Robot|3-Dash
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: eae96f264c24c49499cd553630ead0c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: 4317f257f0c999c48bb4438ce6131471, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,8 +63,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Robot|Idle
-      takeName: Robot|Idle
+      name: Robot|1-Idle
+      takeName: Robot|1-Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 1
@@ -73,8 +92,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Robot|Walk
-      takeName: Robot|Walk
+      name: Robot|2-Walk
+      takeName: Robot|2-Walk
       internalID: 0
       firstFrame: 0
       lastFrame: 25
@@ -116,8 +135,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Robot|Dash
-      takeName: Robot|Dash
+      name: Robot|3-Dash
+      takeName: Robot|3-Dash
       internalID: 0
       firstFrame: 0
       lastFrame: 25

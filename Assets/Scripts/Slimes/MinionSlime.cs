@@ -10,6 +10,7 @@ public sealed class MinionSlime : Slime
     [Header("AI")]
     public float AllySearchRadius = 10f;
     public float MergeRadius = 3f;
+    public float ChaseRadius = 20f;
 
     [Header("Sounds")]
     public AudioClip ClipCombine;
@@ -54,6 +55,7 @@ public sealed class MinionSlime : Slime
                 UpdateMerge();
                 break;
         }
+
     }
 
     void CheckForMerge()
@@ -101,24 +103,19 @@ public sealed class MinionSlime : Slime
     {
         agent.SetDestination(target.transform.position);
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 5f)
+        if (Vector3.Distance(transform.position, target.transform.position) < ChaseRadius)
         {
             state = SlimeState.Chase;
+            agent.speed = 10f;
         }
     }
 
     void UpdateChase()
     {
-        agent.SetDestination(target.transform.position);
+        // Try to get infront of the player
+        agent.SetDestination(target.transform.position + target.rb.velocity * 10);
 
-        var targetDistance = Vector3.Distance(transform.position, target.transform.position);
-
-        if (targetDistance < 1f)
-        {
-            //Attack
-        }
-
-        if (targetDistance > 5f)
+        if (Vector3.Distance(transform.position, target.transform.position) > ChaseRadius)
         {
             state = SlimeState.Search;
         }

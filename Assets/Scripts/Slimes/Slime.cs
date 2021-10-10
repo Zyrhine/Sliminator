@@ -45,6 +45,7 @@ public abstract class Slime : MonoBehaviour
 
     protected virtual void Update()
     {
+        // Go back to idle if no target
         if (!target)
         {
             state = SlimeState.Idle;
@@ -61,11 +62,19 @@ public abstract class Slime : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set a reference to an entity that owns this slime so that it can callback when this slime is destroyed.
+    /// </summary>
+    /// <param name="gameObject"></param>
     void SetOwner(GameObject gameObject)
     {
         owner = gameObject;
     }
 
+    /// <summary>
+    /// Add damage to the slime.
+    /// </summary>
+    /// <param name="damage"></param>
     protected virtual void AddDamage(float damage)
     {
         Health -= damage;
@@ -75,6 +84,10 @@ public abstract class Slime : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Kills the slime.
+    /// </summary>
+    /// <param name="delay"></param>
     protected virtual void Die(float delay = 1f)
     {
         if (Alive)

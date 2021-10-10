@@ -5,6 +5,7 @@ public sealed class BossSlime : Slime
 {
     private GameHUD BossHUD;
     public List<Transform> SummonPoints = new List<Transform>();
+    public List<GameObject> TrapDoors = new List<GameObject>();
 
     [Header("Enemy Prefabs")]
     public GameObject VolatileSlime;
@@ -14,6 +15,7 @@ public sealed class BossSlime : Slime
     public GameObject MassSlime;
 
     private List<int> SpawnedEnemies = new List<int>();
+    private ParticleSystem DeathSplat;
 
     [Header("AI")]
     public float SummonCooldown = 15;
@@ -33,6 +35,7 @@ public sealed class BossSlime : Slime
         }
 
         BossHUD = target.HUD;
+        DeathSplat = transform.Find("SlimeDeathSplat").GetComponent<ParticleSystem>();
     }
 
     protected override void Update()
@@ -145,10 +148,23 @@ public sealed class BossSlime : Slime
         BossHUD.UpdateBoss(Health, MaxHealth);
     }
 
-    protected override void Die(float delay = 5)
+    protected override void Die(float delay = 1f)
     {
-        base.Die(delay);
+        base.Die(3f);
         Anim.SetBool("IsDead", true);
+
+        // Hide the HUD
+        BossHUD.DisplayBoss(false);
+
+        // Spawn death particles
+        DeathSplat.Play();
+        DeathSplat.transform.parent = null;
+
+        // Open the gate
+        foreach (GameObject door in TrapDoors)
+        {
+            door.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -6,6 +6,9 @@ public class AbilityChest : MonoBehaviour
     public RMRotator Rotator;
     public Player.PlayerAbility Ability = Player.PlayerAbility.None;
 
+    [Header("Sounds")]
+    public AudioClip ClipUnlock;
+
     [Header("Prefabs")]
     public GameObject AbilityPopup;
 
@@ -17,6 +20,7 @@ public class AbilityChest : MonoBehaviour
         Rotator.Activate();
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UnlockAbility(Ability);
         GameObject popup = Instantiate(AbilityPopup, transform.position, Quaternion.identity);
+        GetComponent<AudioSource>().PlayOneShot(ClipUnlock);
 
         // Display a tip on what the ability is
         string text = "";

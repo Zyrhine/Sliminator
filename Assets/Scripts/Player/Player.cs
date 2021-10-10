@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     // Components
     private new Camera camera;
-    private Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     private Animator anim;
     private AudioSource sound;
     private LevelManager levelManager;
@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
     public AudioClip[] ClipDamageImpacts;
     public AudioClip ClipDeath;
     public AudioClip ClipMortarLaunch;
+    public AudioClip ClipDash;
 
     void Start()
     {
@@ -249,6 +250,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Dash"))
             {
+                sound.PlayOneShot(ClipDash);
                 dashDirection = direction;
                 dashing = true;
                 anim.SetBool("Dash", true);
@@ -431,6 +433,7 @@ public class Player : MonoBehaviour
                 break;
         }
 
+        RefreshHUD();
         levelManager.AddUnlock();
     }
 
