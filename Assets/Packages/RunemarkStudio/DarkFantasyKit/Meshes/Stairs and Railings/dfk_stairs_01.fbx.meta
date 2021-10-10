@@ -1,27 +1,65 @@
 fileFormatVersion: 2
 guid: 545b902be786bb6488db68ead3e8c4be
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: StairCollider.001
-    100004: Stairs_float
-    100006: Stairs_Wall
-    400000: //RootNode
-    400002: StairCollider.001
-    400004: Stairs_float
-    400006: Stairs_Wall
-    2300000: //RootNode
-    2300002: StairCollider.001
-    2300004: Stairs_float
-    2300006: Stairs_Wall
-    3300000: //RootNode
-    3300002: StairCollider.001
-    3300004: Stairs_float
-    3300006: Stairs_Wall
-    4300000: Stairs_float
-    4300002: StairCollider.001
-    4300004: Stairs_Wall
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: StairCollider.001
+  - first:
+      1: 100004
+    second: Stairs_float
+  - first:
+      1: 100006
+    second: Stairs_Wall
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: StairCollider.001
+  - first:
+      4: 400004
+    second: Stairs_float
+  - first:
+      4: 400006
+    second: Stairs_Wall
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: StairCollider.001
+  - first:
+      23: 2300004
+    second: Stairs_float
+  - first:
+      23: 2300006
+    second: Stairs_Wall
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: StairCollider.001
+  - first:
+      33: 3300004
+    second: Stairs_float
+  - first:
+      33: 3300006
+    second: Stairs_Wall
+  - first:
+      43: 4300000
+    second: Stairs_float
+  - first:
+      43: 4300002
+    second: StairCollider.001
+  - first:
+      43: 4300004
+    second: Stairs_Wall
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -39,7 +77,7 @@ ModelImporter:
       name: Wall_1
     second: {fileID: 2100000, guid: 037fa65b64e7b86459dfed4a79de48ec, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -56,13 +94,15 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
+    extraUserProperties:
+    - '#BAKERY{"meshName":["Stairs_float","Stairs_Wall"],"padding":[13,21],"unwrapper":[0,0]}'
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -70,21 +110,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 1
     secondaryUVAreaDistortion: 1
     secondaryUVHardAngle: 60
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 16
     useFileScale: 1
   tangentSpace:
@@ -92,10 +142,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -105,14 +158,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

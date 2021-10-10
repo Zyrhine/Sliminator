@@ -14,6 +14,7 @@ public abstract class Slime : MonoBehaviour
         Merge
     }
 
+    private LevelManager levelManager;
     private GameObject owner;
     protected Player target;
     protected NavMeshAgent agent;
@@ -39,6 +40,7 @@ public abstract class Slime : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = MoveSpeed;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
     }
 
     protected virtual void Update()
@@ -81,5 +83,8 @@ public abstract class Slime : MonoBehaviour
             // Inform the owner that this slime has been destroyed.
             owner.SendMessage("OnChildDestroyed", gameObject.GetInstanceID());
         }
+
+        // Add death to counter
+        levelManager.AddKill();
     }
 }

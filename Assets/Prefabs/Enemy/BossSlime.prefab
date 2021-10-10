@@ -60,7 +60,7 @@ MonoBehaviour:
   ToxicTurret: {fileID: 3691757549395426698, guid: 1c8e9955eb615ca42a946e234f679292, type: 3}
   MinionSlime: {fileID: 442926040111610581, guid: 7c234efc028a3194fa4eeb8835934264, type: 3}
   MassSlime: {fileID: 344686873398454591, guid: cb3a6847520745640a695a141e0d9e48, type: 3}
-  SummonCooldown: 30
+  SummonCooldown: 15
 --- !u!54 &7996613881461863283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 27.307247
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

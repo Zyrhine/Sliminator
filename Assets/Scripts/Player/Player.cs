@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private AudioSource sound;
+    private LevelManager levelManager;
 
     // Transforms
     private Transform turretTransform;
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
         firePoint1 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head/Arm.L/Gun.L");
         firePoint2 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head/Arm.R/Gun.R");
         firePoint3 = gameObject.transform.Find("Mech/Root/Torso/Neck/Head");
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
         RefreshHUD();
     }
@@ -118,6 +120,7 @@ public class Player : MonoBehaviour
         if (Ammo > 0 && fireInterval <= 0f)
         {
             Ammo--;
+            levelManager.AddAmmoUsed();
             sound.PlayOneShot(sound.clip);
             HUD.UpdateAmmo(Ammo);
             Instantiate(Bullet, firePoint1.position + firePoint1.forward * 2f, firePoint1.rotation);
@@ -135,7 +138,7 @@ public class Player : MonoBehaviour
         if (MortarCharges > 0)
         {
             MortarCharges--;
-            //sound.PlayOneShot(sound.clip);
+            levelManager.AddAmmoUsed();
             HUD.UpdateMortarCharges(MortarCharges);
             Rigidbody mortar = Instantiate(MortarMine, firePoint3.position + firePoint3.forward * 2f, firePoint3.rotation).GetComponent<Rigidbody>();
             mortar.AddForce(mortar.transform.up * 25);
@@ -360,7 +363,7 @@ public class Player : MonoBehaviour
     /// Enables a player ability.
     /// </summary>
     /// <param name="ability"></param>
-    void UnlockAbility(PlayerAbility ability)
+    public void UnlockAbility(PlayerAbility ability)
     {
         switch (ability)
         {
@@ -381,6 +384,8 @@ public class Player : MonoBehaviour
                 PlayerPrefs.SetInt("HasShield", 1);
                 break;
         }
+
+        levelManager.AddUnlock();
     }
 
     /// <summary>
@@ -416,6 +421,7 @@ public class Player : MonoBehaviour
 
     public enum PlayerAbility
     {
+        None,
         Dash,
         Shield,
         MortarMine,

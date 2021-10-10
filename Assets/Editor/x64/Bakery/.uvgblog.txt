@@ -1,0 +1,439 @@
+2021-10-10
+Rendering UV GBuffer for Level1_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level1_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level1_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level1_LMA1.lz4" 2 0 1 0
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1" 4 0 1 comp_1.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0_diffuse" 4 16 0 "gi_Level1_LM00.bin" "Level1_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1_diffuse" 4 16 1 "gi_Level1_LMA10.bin" "Level1_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0_diffuse" 4 16 0 "gi_Level1_LM01.bin" "Level1_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1_diffuse" 4 16 1 "gi_Level1_LMA11.bin" "Level1_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0_diffuse" 4 16 0 "gi_Level1_LM02.bin" "Level1_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1_diffuse" 4 16 1 "gi_Level1_LMA12.bin" "Level1_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0_diffuse" 4 16 0 "gi_Level1_LM03.bin" "Level1_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1_diffuse" 4 16 1 "gi_Level1_LMA13.bin" "Level1_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LM0_final" 4 16 0 "gi_Level1_LM04.bin" "Level1_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level1_LMA1_final" 4 16 1 "gi_Level1_LMA14.bin" "Level1_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LM0_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LM0_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "0" "Level1_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LMA1_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LMA1_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "1" "Level1_LMA1_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LM0_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level1_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level1_LMA1_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level1_LMA1_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Num alphas of 1024x1024: 1
+Done
+Rendering UV GBuffer for Level2_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA1.lz4" 2 0 1 0
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1" 4 0 1 comp_1.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM00.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA10.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM01.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA11.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM02.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA12.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM03.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA13.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_final" 4 16 0 "gi_Level2_LM04.bin" "Level2_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_final" 4 16 1 "gi_Level2_LMA14.bin" "Level2_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "0" "Level2_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "1" "Level2_LMA1_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA1_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Num alphas of 1024x1024: 1
+Done
+Rendering UV GBuffer for Level2_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA1.lz4" 2 0 1 0
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1" 4 0 1 comp_1.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM00.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA10.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM01.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA11.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM02.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA12.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM03.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 1 "gi_Level2_LMA13.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_final" 4 16 0 "gi_Level2_LM04.bin" "Level2_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_final" 4 16 1 "gi_Level2_LMA14.bin" "Level2_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "0" "Level2_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "1" "Level2_LMA1_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA1_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for Level3_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level3_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level3_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level3_LMA4.lz4" 2 0 1 0
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4" 4 0 1 comp_1.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0_diffuse" 4 16 0 "gi_Level3_LM00.bin" "Level3_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4_diffuse" 4 16 1 "gi_Level3_LMA40.bin" "Level3_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0_diffuse" 4 16 0 "gi_Level3_LM01.bin" "Level3_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4_diffuse" 4 16 1 "gi_Level3_LMA41.bin" "Level3_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0_diffuse" 4 16 0 "gi_Level3_LM02.bin" "Level3_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4_diffuse" 4 16 1 "gi_Level3_LMA42.bin" "Level3_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0_diffuse" 4 16 0 "gi_Level3_LM03.bin" "Level3_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4_diffuse" 4 16 1 "gi_Level3_LMA43.bin" "Level3_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LM0_final" 4 16 0 "gi_Level3_LM04.bin" "Level3_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level3_LMA4_final" 4 16 1 "gi_Level3_LMA44.bin" "Level3_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LM0_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LM0_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "0" "Level3_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LMA4_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LMA4_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "1" "Level3_LMA4_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LM0_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level3_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level3_LMA4_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level3_LMA4_final.hdr" 1024
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Num alphas of 1024x1024: 3
+Num alphas of 2048x2048: 3
+Done
+Rendering UV GBuffer for Level2_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA18 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA17 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA16 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA11 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA10 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA9 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA19 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA8 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA6 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA7 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Level2_LMA15 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA2.lz4" 2 0 13 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA1.lz4" 2 0 14 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA4.lz4" 2 0 11 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA3.lz4" 2 0 12 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA7.lz4" 2 0 15 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA5.lz4" 2 0 10 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA6.lz4" 2 0 9 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA8.lz4" 2 0 8 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA9.lz4" 2 0 6 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA10.lz4" 2 0 5 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA16.lz4" 2 0 3 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA15.lz4" 2 0 16 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA11.lz4" 2 0 4 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA17.lz4" 2 0 2 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA18.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\Jake\AppData\Local\Temp\frender" "uvpos_Level2_LMA19.lz4" 2 0 7 0
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2" 4 0 13 comp_13.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1" 4 0 14 comp_14.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4" 4 0 11 comp_11.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3" 4 0 12 comp_12.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7" 4 0 15 comp_15.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5" 4 0 10 comp_10.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6" 4 0 9 comp_9.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8" 4 0 8 comp_8.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9" 4 0 6 comp_6.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10" 4 0 5 comp_5.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16" 4 0 3 comp_3.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15" 4 0 16 comp_16.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11" 4 0 4 comp_4.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17" 4 0 2 comp_2.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18" 4 0 1 comp_1.bin
+Running ftrace addmul "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19" 4 0 7 comp_7.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2_diffuse" 4 16 13 "gi_Level2_LMA20.bin" "Level2_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM00.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 14 "gi_Level2_LMA10.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4_diffuse" 4 16 11 "gi_Level2_LMA40.bin" "Level2_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3_diffuse" 4 16 12 "gi_Level2_LMA30.bin" "Level2_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7_diffuse" 4 16 15 "gi_Level2_LMA70.bin" "Level2_LMA7_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5_diffuse" 4 16 10 "gi_Level2_LMA50.bin" "Level2_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6_diffuse" 4 16 9 "gi_Level2_LMA60.bin" "Level2_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8_diffuse" 4 16 8 "gi_Level2_LMA80.bin" "Level2_LMA8_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9_diffuse" 4 16 6 "gi_Level2_LMA90.bin" "Level2_LMA9_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10_diffuse" 4 16 5 "gi_Level2_LMA100.bin" "Level2_LMA10_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16_diffuse" 4 16 3 "gi_Level2_LMA160.bin" "Level2_LMA16_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15_diffuse" 4 16 16 "gi_Level2_LMA150.bin" "Level2_LMA15_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11_diffuse" 4 16 4 "gi_Level2_LMA110.bin" "Level2_LMA11_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17_diffuse" 4 16 2 "gi_Level2_LMA170.bin" "Level2_LMA17_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18_diffuse" 4 16 1 "gi_Level2_LMA180.bin" "Level2_LMA18_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19_diffuse" 4 16 7 "gi_Level2_LMA190.bin" "Level2_LMA19_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2_diffuse" 4 16 13 "gi_Level2_LMA21.bin" "Level2_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM01.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 14 "gi_Level2_LMA11.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4_diffuse" 4 16 11 "gi_Level2_LMA41.bin" "Level2_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3_diffuse" 4 16 12 "gi_Level2_LMA31.bin" "Level2_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7_diffuse" 4 16 15 "gi_Level2_LMA71.bin" "Level2_LMA7_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5_diffuse" 4 16 10 "gi_Level2_LMA51.bin" "Level2_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6_diffuse" 4 16 9 "gi_Level2_LMA61.bin" "Level2_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8_diffuse" 4 16 8 "gi_Level2_LMA81.bin" "Level2_LMA8_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9_diffuse" 4 16 6 "gi_Level2_LMA91.bin" "Level2_LMA9_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10_diffuse" 4 16 5 "gi_Level2_LMA101.bin" "Level2_LMA10_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16_diffuse" 4 16 3 "gi_Level2_LMA161.bin" "Level2_LMA16_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15_diffuse" 4 16 16 "gi_Level2_LMA151.bin" "Level2_LMA15_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11_diffuse" 4 16 4 "gi_Level2_LMA111.bin" "Level2_LMA11_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17_diffuse" 4 16 2 "gi_Level2_LMA171.bin" "Level2_LMA17_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18_diffuse" 4 16 1 "gi_Level2_LMA181.bin" "Level2_LMA18_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19_diffuse" 4 16 7 "gi_Level2_LMA191.bin" "Level2_LMA19_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2_diffuse" 4 16 13 "gi_Level2_LMA22.bin" "Level2_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM02.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 14 "gi_Level2_LMA12.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4_diffuse" 4 16 11 "gi_Level2_LMA42.bin" "Level2_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3_diffuse" 4 16 12 "gi_Level2_LMA32.bin" "Level2_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7_diffuse" 4 16 15 "gi_Level2_LMA72.bin" "Level2_LMA7_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5_diffuse" 4 16 10 "gi_Level2_LMA52.bin" "Level2_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6_diffuse" 4 16 9 "gi_Level2_LMA62.bin" "Level2_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8_diffuse" 4 16 8 "gi_Level2_LMA82.bin" "Level2_LMA8_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9_diffuse" 4 16 6 "gi_Level2_LMA92.bin" "Level2_LMA9_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10_diffuse" 4 16 5 "gi_Level2_LMA102.bin" "Level2_LMA10_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16_diffuse" 4 16 3 "gi_Level2_LMA162.bin" "Level2_LMA16_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15_diffuse" 4 16 16 "gi_Level2_LMA152.bin" "Level2_LMA15_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11_diffuse" 4 16 4 "gi_Level2_LMA112.bin" "Level2_LMA11_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17_diffuse" 4 16 2 "gi_Level2_LMA172.bin" "Level2_LMA17_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18_diffuse" 4 16 1 "gi_Level2_LMA182.bin" "Level2_LMA18_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19_diffuse" 4 16 7 "gi_Level2_LMA192.bin" "Level2_LMA19_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2_diffuse" 4 16 13 "gi_Level2_LMA23.bin" "Level2_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_diffuse" 4 16 0 "gi_Level2_LM03.bin" "Level2_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_diffuse" 4 16 14 "gi_Level2_LMA13.bin" "Level2_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4_diffuse" 4 16 11 "gi_Level2_LMA43.bin" "Level2_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3_diffuse" 4 16 12 "gi_Level2_LMA33.bin" "Level2_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7_diffuse" 4 16 15 "gi_Level2_LMA73.bin" "Level2_LMA7_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5_diffuse" 4 16 10 "gi_Level2_LMA53.bin" "Level2_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6_diffuse" 4 16 9 "gi_Level2_LMA63.bin" "Level2_LMA6_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8_diffuse" 4 16 8 "gi_Level2_LMA83.bin" "Level2_LMA8_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9_diffuse" 4 16 6 "gi_Level2_LMA93.bin" "Level2_LMA9_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10_diffuse" 4 16 5 "gi_Level2_LMA103.bin" "Level2_LMA10_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16_diffuse" 4 16 3 "gi_Level2_LMA163.bin" "Level2_LMA16_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15_diffuse" 4 16 16 "gi_Level2_LMA153.bin" "Level2_LMA15_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11_diffuse" 4 16 4 "gi_Level2_LMA113.bin" "Level2_LMA11_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17_diffuse" 4 16 2 "gi_Level2_LMA173.bin" "Level2_LMA17_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18_diffuse" 4 16 1 "gi_Level2_LMA183.bin" "Level2_LMA18_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19_diffuse" 4 16 7 "gi_Level2_LMA193.bin" "Level2_LMA19_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA2_final" 4 16 13 "gi_Level2_LMA24.bin" "Level2_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LM0_final" 4 16 0 "gi_Level2_LM04.bin" "Level2_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA1_final" 4 16 14 "gi_Level2_LMA14.bin" "Level2_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA4_final" 4 16 11 "gi_Level2_LMA44.bin" "Level2_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA3_final" 4 16 12 "gi_Level2_LMA34.bin" "Level2_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA7_final" 4 16 15 "gi_Level2_LMA74.bin" "Level2_LMA7_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA5_final" 4 16 10 "gi_Level2_LMA54.bin" "Level2_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA6_final" 4 16 9 "gi_Level2_LMA64.bin" "Level2_LMA6_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA8_final" 4 16 8 "gi_Level2_LMA84.bin" "Level2_LMA8_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA9_final" 4 16 6 "gi_Level2_LMA94.bin" "Level2_LMA9_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA10_final" 4 16 5 "gi_Level2_LMA104.bin" "Level2_LMA10_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA16_final" 4 16 3 "gi_Level2_LMA164.bin" "Level2_LMA16_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA15_final" 4 16 16 "gi_Level2_LMA154.bin" "Level2_LMA15_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA11_final" 4 16 4 "gi_Level2_LMA114.bin" "Level2_LMA11_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA17_final" 4 16 2 "gi_Level2_LMA174.bin" "Level2_LMA17_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA18_final" 4 16 1 "gi_Level2_LMA184.bin" "Level2_LMA18_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\Jake\AppData\Local\Temp\frender" "Level2_LMA19_final" 4 16 7 "gi_Level2_LMA194.bin" "Level2_LMA19_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA2_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA2_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "13" "Level2_LMA2_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "0" "Level2_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "14" "Level2_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA4_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA4_final_HDR.lz4" 512 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "11" "Level2_LMA4_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA3_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA3_final_HDR.lz4" 1024 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "12" "Level2_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA7_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA7_final_HDR.lz4" 32 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "15" "Level2_LMA7_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA5_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA5_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "10" "Level2_LMA5_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA6_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA6_final_HDR.lz4" 64 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "9" "Level2_LMA6_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA8_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA8_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "8" "Level2_LMA8_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA9_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA9_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "6" "Level2_LMA9_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA10_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA10_final_HDR.lz4" 512 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "5" "Level2_LMA10_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA16_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA16_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "3" "Level2_LMA16_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA15_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA15_final_HDR.lz4" 512 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "16" "Level2_LMA15_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA11_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA11_final_HDR.lz4" 512 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "4" "Level2_LMA11_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA17_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA17_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "2" "Level2_LMA17_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA18_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA18_final_HDR.lz4" 128 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "1" "Level2_LMA18_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA19_final_HDR.lz4" "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA19_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\Jake\AppData\Local\Temp\frender" "7" "Level2_LMA19_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA2_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA2_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LM0_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA1_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA4_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA4_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA3_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA7_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA7_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA5_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA5_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA6_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA6_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA8_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA8_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA9_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA9_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA10_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA10_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA16_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA16_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA15_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA15_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA11_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA11_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA17_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA17_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA18_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA18_final.hdr" 1024
+Running halffloat2hdr "C:\Users\Jake\AppData\Local\Temp\frender/Level2_LMA19_final_HDR.lz4" "C:/Users/Jake/Documents/GitHub/Sliminator/Assets/BakeryLightmaps/Level2_LMA19_final.hdr" 1024

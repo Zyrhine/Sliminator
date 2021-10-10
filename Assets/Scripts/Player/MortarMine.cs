@@ -7,7 +7,8 @@ public class MortarMine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        // Explode if an enemy collider enters the trigger
+        if (other.CompareTag("Enemy") && !other.isTrigger)
         {
             Explode();
         }

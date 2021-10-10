@@ -44,6 +44,10 @@ public class WaveSpawner : MonoBehaviour
 
     private List<int> SpawnedEnemies = new List<int>();
 
+    [Header("World Components")]
+    public List<GameObject> TrapDoors;
+    public GameObject Treasure;
+
     [Header("Enemy Prefabs")]
     public GameObject VolatileSlime;
     public GameObject ArmoredSlime;
@@ -54,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        // Ensure there are places to spawn enemies
         if (SpawnPoints.Count == 0)
         {
             Debug.Log("[Wave Spawner] No spawn points defined. Destroying self.");
@@ -65,16 +70,30 @@ public class WaveSpawner : MonoBehaviour
 
         // Set trigger radius on collider
         GetComponent<SphereCollider>().radius = TriggerRadius;
+
+        // Ensure trap doors are open to start with
+        EnableTrapDoors(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        if (!WavesComplete && !WavesActive)
+        if (other.CompareTag("Player"))
         {
-            WavesActive = true;
-            PlayerHUD.DisplayWaves(true);
-            PlayerHUD.UpdateWave(CurrentWave + 1, 0);
+            if (!WavesComplete && !WavesActive)
+            {
+                WavesActive = true;
+                PlayerHUD.DisplayWaves(true);
+                PlayerHUD.UpdateWave(CurrentWave + 1, 0);
+                EnableTrapDoors(true);
+            }
+        }
+    }
+
+    void EnableTrapDoors(bool state)
+    {
+        foreach(GameObject door in TrapDoors)
+        {
+            door.SetActive(state);
         }
     }
 
@@ -85,19 +104,14 @@ public class WaveSpawner : MonoBehaviour
             if (CurrentWave < waves.Count)
             {
                 // Spawn the wave
-                Debug.Log(waves[CurrentWave].HasSpawned);
-
                 if (waves[CurrentWave].HasSpawned == false)
                 {
-                    Debug.Log("Spawning Wave: " + CurrentWave);
                     SpawnWave(waves[CurrentWave]);
                 }
                 
                 // When all enemies are killed, move to the next wave
                 if (SpawnedEnemies.Count == 0)
                 {
-                    Debug.Log("Wave " + CurrentWave + " Cleared.");
-
                     CurrentWave++;
                     if (CurrentWave == waves.Count)
                     {
@@ -171,6 +185,8 @@ public class WaveSpawner : MonoBehaviour
     {
         WavesComplete = true;
         PlayerHUD.DisplayWaves(false);
+        EnableTrapDoors(false);
+        Treasure.SendMessage("Activate");
         Destroy(gameObject);
     }
 
